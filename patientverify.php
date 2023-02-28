@@ -23,10 +23,10 @@ if(isset($_GET['code']))
     {
         if($result->num_rows == 1)
         {
-            $update = "UPDATE patient SET status = 1 WHERE code = '$code' LIMIT 1";
+            $update = "UPDATE patient SET patientstatus = 1 WHERE code = '$code' LIMIT 1";
             if (mysqli_query($conn, $update)){
                 echo "Patient Account created successfully! Click the link to complete login
-                <a href='http://localhost//patientsigninpage.html'>Login </a>"; //
+                <a href='http://localhost/Find-A-Doc/patientsigninpage.html'>Login </a>"; //
                 exit;
                 
 				

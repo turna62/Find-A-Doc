@@ -26,7 +26,7 @@ if(isset($_GET['code']))
             $update = "UPDATE doctor SET doctorstatus = 1 WHERE code = '$code' LIMIT 1";
             if (mysqli_query($conn, $update)){
                 echo "Doctor Account created successfully! Click the link to complete login
-                <a href='http://localhost//doctorsigninpage.html'>Login </a>"; //
+                <a href='http://localhost/Find-A-Doc/doctorsigninpage.html'>Login </a>"; //
                 exit;
         
             }
