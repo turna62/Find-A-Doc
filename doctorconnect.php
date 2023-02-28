@@ -2,7 +2,7 @@
 
   error_reporting(0);
 
-  use PHPMailer\PHPMailer\PHPMailer; //
+  use PHPMailer\PHPMailer\PHPMailer; 
   use PHPMailer\PHPMailer\SMTP;
   use PHPMailer\PHPMailer\Exception;
 
@@ -16,7 +16,7 @@
 
   function sendMail($doctoremail,$code)
   {
-    require ("PHPMailer/PHPMailer.php"); //
+    require ("PHPMailer/PHPMailer.php"); 
     require ("PHPMailer/SMTP.php");
     require ("PHPMailer/Exception.php");
 
@@ -43,8 +43,8 @@
     $mail->setFrom(""); //
 
     $mail->Body = "Dear doctor, Thank you for registering! Click the link to verify your email
-                   <a href='http://localhost//doctorverify.php?doctoremail=$doctoremail&code=$code'> Verify </a>";
-                    //
+                   <a href='http://localhost/Find-A-Doc/doctorverify.php?doctoremail=$doctoremail&code=$code'> Verify </a>";
+                    
     $mail->addAddress($doctoremail);
 
     if($mail->Send()){
