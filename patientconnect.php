@@ -32,15 +32,15 @@
 
     $mail->Port = "587";
 
-    $mail->Username = ""; //
+    $mail->Username = "find.a.doc.983@gmail.com"; 
 
-    $mail->Password = ""; //
+    $mail->Password = "xcpkphipdsqtjkam"; 
 
     $mail->isHTML(true);
 
     $mail->Subject = "Find A Doc - Verify Mail";
 
-    $mail->setFrom(""); //
+    $mail->setFrom("find.a.doc.983@gmail.com"); 
 
     $mail->Body = "Dear patient, Thank you for registering! Click the link to verify your email
                    <a href='http://localhost/Find-A-Doc/patientverify.php?patientemail=$patientemail&code=$code'> Verify </a>";
