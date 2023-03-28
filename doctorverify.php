@@ -32,12 +32,12 @@ if(isset($_GET['code']))
             }
             else{
                 
-                header(Location:"");//
+                //header(Location:"");//
                 exit();
             }
         }
         else{
-          header(Location:"");//
+          //header(Location:"");//
           exit();
       
             
@@ -45,7 +45,7 @@ if(isset($_GET['code']))
     }
 
     else{
-      header(Location:"");//
+      //header(Location:"");//
       exit();
   
         

@@ -32,7 +32,7 @@ if (isset($patientemail) && isset($patientpassword)) {
 				$_SESSION['patientname'] = $row['patientname'];
 				$_SESSION['patientlocation'] = $row['patientlocation'];
 							
-                header("Location: homepageloggedinpatient.php");
+                header("Location: hppatient.php");
                 exit();
 				
             }
