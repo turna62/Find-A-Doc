@@ -8,13 +8,14 @@
     </head>
     <style>
 body{
-    background-color: rgb(17, 6, 4);
+    background-color:rgb(9, 52, 69);
 }
 .attribute {
         font-size: 18px;
         font-style: normal;
         position: relative;
-        top: 30px;
+        top: 60px;
+        left: 10px;
         font-family: 'Times New Roman', Times, serif;
         }
     .banner{
@@ -24,16 +25,11 @@ body{
   margin: auto;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(240, 221, 136);
+  background-color: rgb(50, 146, 184);
   position: relative;
   top: 100px;
   border-radius: 5px;
     }
-img {
-    width: 180px;
-    top: 300px;
-    left: 100px;
-}
 label {
     position: relative;
     right: 10px;
@@ -46,7 +42,7 @@ label {
   padding: 8px;
   text-decoration:none;
   font-size: 13px;
-  background-color: rgb(46, 16, 9);
+  background-color: rgb(9, 52, 69);
   margin: 10px;
   border-radius: 5px;
   font-family: 'Times New Roman', Times, serif;
@@ -61,6 +57,8 @@ label {
 }
 .banner form input[type="checkbox"]{
     width: 45px;
+    position: relative;
+    left: 7px;
 }
 .banner .check{
     font-family: 'Times New Roman', Times, serif;
@@ -69,10 +67,16 @@ label {
     right: 20px;
     top: 15px;
 }
+h2{
+    color:white;
+    position: relative;
+    top: 50px;
+}
     </style>
 <body>
     
-        
+<div class = "banner"> 
+    <h2>Filter By Location</h2>
 <!--  -->
   <form method = "GET" action = "submitlocation.php" >
         <div class = "attribute">
