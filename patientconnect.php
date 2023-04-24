@@ -34,7 +34,7 @@
 
     $mail->Username = "find.a.doc.983@gmail.com"; 
 
-    $mail->Password = "xcpkphipdsqtjkam"; 
+    $mail->Password = "sgkmuthnxgpwuuxt"; 
 
     $mail->isHTML(true);
 
@@ -116,7 +116,10 @@
 
         if($INSERT && sendMail($patientemail,$code))
         {
-          header(""); //
+          // echo `Email gese`; //
+          ?>      
+          <script>alert("email gese!")</script>
+          <?php
           exit();
         }
         $conn->close();
@@ -124,7 +127,10 @@
     }
     else
     {
-      header("Location:"); //
+      // echo `hoy nai`; //
+      ?>      
+      <script>alert("hoy nai!")</script>
+      <?php
       exit();
     }
   }
