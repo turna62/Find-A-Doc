@@ -78,6 +78,11 @@ if (!$conn) {
   opacity: 0.7;
 }
 
+h2{
+  color: white;
+  position: relative;
+  top: 60px;
+}
 
 
   </style>
@@ -85,7 +90,7 @@ if (!$conn) {
 
       <div class = "banner">
           
-        
+      <h2>Patient's Profile</h2>
           <div class = "attribute">
             <label>Name:</label>
             <?php

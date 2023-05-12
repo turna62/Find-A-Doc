@@ -17,10 +17,7 @@ error_reporting(0);
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 
-    <title>Patient Home Page</title>
-    
-
-
+    <title>Find-A-Doc Search Page</title>
 
 <style>
 

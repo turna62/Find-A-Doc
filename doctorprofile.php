@@ -77,13 +77,17 @@ if (!$conn) {
   opacity: 0.7;
 }
 
-
+h2{
+  color: white;
+  position: relative;
+  top: 60px;
+}
 
   </style>
 
 
       <div class = "banner">
-          
+          <h2>Doctor's Profile</h2>
         
           <div class = "attribute">
             <label>Name:</label>
@@ -109,9 +113,9 @@ if (!$conn) {
 
            <div class = "attribute">
             <label>Speciality:</label>
-            <!-- <?php
-              echo $_SESSION['userfavcuisine'];
-            ?> -->
+            <?php
+               //echo $_SESSION['doctorcategory'];
+            ?> 
           </div>
            
             <div class="btn" id="btn">
