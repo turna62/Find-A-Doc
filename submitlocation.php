@@ -57,7 +57,7 @@ body{
   position: relative;
   text-decoration : none;
   left: 6px;
-  top: 20px;
+  top: 10px;
   border-radius: 5px;
   background-color: rgb(80, 31, 19) ;
 }
@@ -66,15 +66,6 @@ body{
 .cbtnn2 a:hover {
   opacity: 0.7; 
   text-decoration : none;
-}
-
-
-
-img {
-    width: 180px;
-    height: 145px;
-    top: 300px;
-    left: 100px;
 }
 
 .cardbtn a {
@@ -161,6 +152,10 @@ img {
 
 }
 
+.alert {
+  font-size: 18px;
+}
+
 </style>
 
 <body>
@@ -239,7 +234,7 @@ img {
     
 <?php
         echo '
-           <a class="cbtnn1" href="doctordetails.php?docid='. $sno .'">See More</a>
+           <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>
         
            
            ';
