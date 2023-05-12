@@ -22,7 +22,7 @@ if (mysqli_connect_error()) {
   die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
 }
 
-function sendMail($tomail) {
+function sendMail($tomail, $requestId) {
     require ("PHPMailer/PHPMailer.php"); 
     require ("PHPMailer/SMTP.php");
     require ("PHPMailer/Exception.php");
@@ -39,7 +39,7 @@ function sendMail($tomail) {
     $mail->isHTML(true);
     $mail->Subject = "Find A Doc - Verify Mail";
     $mail->setFrom("find.a.doc.983@gmail.com"); 
-    $mail->Body = "Dear doctor, you have a booking request! Click the link to accept or decline"
+    $mail->Body = "Dear doctor, you have a booking request! Click the link to accept or decline http://localhost/Find-A-Doc/acceptreject.php?tomail=$tomail&id=$requestId> "
                    ;
     $mail->addAddress($tomail);
 
@@ -63,8 +63,9 @@ if(!empty($tomail) && !empty($date) && !empty($time)) {
     else {
         $query = "INSERT INTO requests (frommail, tomail, status, date, time) values ('$frommail', '$tomail', 'p', '$date', '$time')";
         $result = mysqli_query($conn, $query);
+        $requestId = mysqli_insert_id($conn);
   
-        if($result && sendMail($tomail)) {
+        if($result && sendMail($tomail, $requestId)) {
             ?>      
             <script>alert("email gese!")</script>
             <?php
