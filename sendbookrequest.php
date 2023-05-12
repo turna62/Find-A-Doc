@@ -1,10 +1,8 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
-use PHPMailer\PHPMailer\PHPMailer; 
-  use PHPMailer\PHPMailer\SMTP;
-  use PHPMailer\PHPMailer\Exception;
-
-  
 $host = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
@@ -13,17 +11,17 @@ $dbname = "findadoc";
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
 $tomail = $_POST['email'];
+$date = $_POST['date'];
+$time = $_POST['time'];
 
 session_start();
-$frommail = $_SESSION['email']; 
+$frommail = $_SESSION['patientemail'];
 
-if (mysqli_connect_error())
-{
+if (mysqli_connect_error()) {
   die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
 }
 
-function sendMail($patientemail,$code)
-  {
+function sendMail($patientemail) {
     require ("PHPMailer/PHPMailer.php"); 
     require ("PHPMailer/SMTP.php");
     require ("PHPMailer/Exception.php");
@@ -31,27 +29,17 @@ function sendMail($patientemail,$code)
     $mail = new PHPMailer();
 
     $mail->isSMTP();
-
     $mail->Host = "smtp.gmail.com";
-
     $mail->SMTPAuth = "true";
-
     $mail->SMTPSecure = "tls";
-
     $mail->Port = "587";
-
     $mail->Username = "find.a.doc.983@gmail.com"; 
-
     $mail->Password = "sgkmuthnxgpwuuxt"; 
-
     $mail->isHTML(true);
-
     $mail->Subject = "Find A Doc - Verify Mail";
-
     $mail->setFrom("find.a.doc.983@gmail.com"); 
-
-    $mail->Body = "Dear patient, Thank you for registering! Click the link to verify your email
-                   <a href='http://localhost/Find-A-Doc/patientverify.php?patientemail=$patientemail&code=$code'> Verify </a>";
+    $mail->Body = "Dear doctor, you have a booking request! Click the link to accept or decline"
+                   ;
     $mail->addAddress($patientemail);
 
     if($mail->Send()){
@@ -59,30 +47,31 @@ function sendMail($patientemail,$code)
     }else{
         return false;
     }
-
     $mail->smtpClose();
-  }
-
-
-$q = "SELECT * FROM requests WHERE frommail = '$frommail' AND tomail = '$tomail'";
-$found = mysqli_query($conn, $q);
-if ($found->num_rows > 0)
-{
-  echo "Request already sent.";
 }
 
-else
-{
-    $query = "INSERT INTO requests (frommail, tomail, status) values ('$frommail', '$tomail', 'p')";
-    $result = mysqli_query($conn, $query);
+if(!empty($tomail) && !empty($date) && !empty($time)) {
+    $q = "SELECT * FROM requests WHERE frommail = '$frommail' AND tomail = '$tomail' and date ='$date' and time='$time'";
+    $res = mysqli_query($conn, $q);
+
+    if(mysqli_num_rows($res) > 0) {
+        $num_rows = mysqli_num_rows($res);
+        echo "Number of rows: " . $num_rows;
+        exit();
+    }
+    else {
+        $query = "INSERT INTO requests (frommail, tomail, status, date, time) values ('$frommail', '$tomail', 'p', '$date', '$time')";
+        $result = mysqli_query($conn, $query);
   
-    if($result)
-    {
-        header("Location: .php?email=$tomail");
-    }
-    else{
-        echo "Error";
+        if($result && sendMail($tomail)) {
+            ?>      
+            <script>alert("email gese!")</script>
+            <?php
+            exit();
+        }
+        else {
+            echo "Error";
+        }
     }
 }
-
 ?>
