@@ -15,7 +15,7 @@ session_start();
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <title>RRF All Restaurants & Food Items </title>
-    
+     
 
 
 
@@ -25,95 +25,11 @@ session_start();
 
 
 body{
-    background-color: rgb(240, 221, 136);
+    background-color: rgb(50, 146, 184);
     overflow-x: hidden;
 }
 
- .search{
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-    position: relative;
-    left: 30px ;
-    
-}
-
-.search-box input[type="text"]{
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    background: #fff;
-    font-size: 18px;
-    padding: 0 60px 0 20px;
-}
-
-.search-box {
-    height: 50px;
-    width: 600px;
-    color: #fff;
-    position: relative;
-    left: 100px;
-    bottom: 15px;
-}
-
-
-.result{
-        position: absolute;        
-        z-index: 999;
-        top: 100%;
-        left: 0;
-    }
-
-.result p{
-        margin: 0;
-        padding: 7px 10px;
-        border: 1px solid #CCCCCC;
-        border-top: none;
-        cursor: pointer;
-    }
-
-.result p:hover{
-        background: #f2f2f2;
-    }
-
-
-.search-btn {
-    position: relative;
-    left: 550px;
-    bottom: 35px;
-    height: 50px;
-    width: 70px;
-    color: rgb(80, 31, 19) ;
-
-}
-
-.search-btn:hover {
-    color: rgb(100, 91, 148);
-}
-
-.btnn {
-  border: none;
-  outline: none;
-  padding: 8px 8px;
-  cursor: pointer;
-  color: rgb(80, 31, 19);
-  position: relative;
-  left: 125px;
-  top: 10px;
-  border-radius: 10px;
-}
-
-
-.btnn:hover {
-  background-color: rgb(155, 113, 58) ;
-  color: white;
-}
-
-
-.btnn.show {
-  background-color: #666;
-  color: white;
-}
+ 
 
 .cbtnn1 {
   border: none;
@@ -125,8 +41,8 @@ body{
   text-decoration : none;
   top: 20px;
   border-radius: 5px;
-  background-color: rgb(80, 31, 19) ;
-  right: 2px;
+  background-color: rgb(9, 52, 69);
+  left: 10px;
 }
 
 
@@ -144,7 +60,7 @@ body{
   position: relative;
   text-decoration : none;
   left: 6px;
-  top: 20px;
+  top: 10px;
   border-radius: 5px;
   background-color: rgb(80, 31, 19) ;
 }
@@ -154,82 +70,6 @@ body{
   opacity: 0.7; 
   text-decoration : none;
 }
-
-.cbtnn3 {
-      background-color:rgb(80, 31, 19);
-      color: white;
-      padding: 4px 80px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      float: right;
-      text-decoration : none;
-      position: relative;
-      left: 8px;
-      top: 30px;
-      outline: none;   
-}
-
-
-.cbtnn3 a:hover {
-  opacity: 0.7; 
-  text-decoration : none;
-}
-
-img {
-    width: 180px;
-    height: 145px;
-    top: 300px;
-    left: 100px;
-}
-
-.logo .rrflogo{
-  width: 180px;
-  height: 80px;
-    top: 300px;
-    left: 100px;
-}
-
-
-.sidebar {
-  height: 100%;
-  width: 180px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  background-color: rgb(241, 191, 114);
-  
-}
-
-.sidebar a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: rgb(80, 31, 19);
-  display: block;
-  position: relative;
-  top: 10px;
-  left: 5px;
-}
-
-.updbn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: rgb(80, 31, 19);
-  display: block;
-  position: relative;
-  top: 10px;
-  left: 5px;
-}
-
-.sidebar a:hover {
-  color: gray;
-}
-
-
 
 .cardbtn a {
 
@@ -259,160 +99,32 @@ img {
 } 
 
 .card{
-  height: 370px;
+  height: 180px;
+  position: relative;
+  top: 50px;
+  right: 20px;
+  width: 150px;
+  background: white;
 }
-
+.card-title {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+}
+.card-text {
+  position: relative;
+  left: 10px;
+  font-size: 17px;
+}
 
 .heading{
   position: relative;
-  left: 220px;
-  top : 80px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-.headingnan{
-  position: relative;
-  left: 220px;
-  top : 80px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-.headingitalian{
-  position: relative;
-  left: 220px;
-  top : 20px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-.headingpizza{
-  position: relative;
-  left: 220px;
-  top : 80px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-
-
-.headingbengali{
-  position: relative;
-  left: 220px;
-  top : 55px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-.headingburger{
-  position: relative;
-  left: 220px;
-  top : 15px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-
-
-.headingfav{
-  position: relative;
-  left: 220px;
-  top : 50px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.headingall{
-  position: relative;
-  left: 220px;
-  
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-
-
-.heading1{
-  position: relative;
-  left: 220px;
-  top : 70px;
-  font-size: 25px;
-  color: rgb(80, 31, 19);
-  animation-name: example;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  font-family: 'Times New Roman', Times, serif;
-
-}
-
-@keyframes example {
-  0%   { left:0px; top:30px;}
-  15%  { left:200px; top:30px;}
-}
-
-.cardifix{
-  position: relative;
   left: 200px;
-  width: 80%;
-  cursor : pointer;
-  bottom: 70px;
-}
-
-.cardifix .card {
-  height: 415px;
-  position: relative;
-}
-
-.cardifix img {
-  width: 180px;
-  height: 120px;
-}
-
- .dropbtn {
-  background-color:rgb(80, 31, 19);
-  color: white;
-  padding: 16px;
-  font-size: 22px;
-  border: none;
-  cursor: pointer;
-  border-radius: 30px;
-}
- .dropdown {
-  position: relative;
-  display: inline-block;
-  left: 1100px;
-  bottom: 40px;
-}
-
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color :rgb(80, 31, 19);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 12px;
-  text-decoration: none;
-  display: block;
-  
-}
-
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-  color :rgb(80, 31, 19);
-}
-
-
-.dropdown:hover .dropdown-content {
-  display: block;
+  top : 80px;
+  font-size: 25px;
+  color: rgb(80, 31, 19);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -433,12 +145,19 @@ img {
 .card .card-body .card-text1 i{
     bottom: 50px;
 }
-
-.wholefix{
+.alert{
   position: relative;
-  right: 80px;
+  top: 40px;
+  right: 10px;
+}
+.rrflogo{
+  height:80px;
+
 }
 
+.alert {
+  font-size: 18px;
+}
 
 </style>
 
@@ -490,7 +209,7 @@ img {
         
 <?php
         echo '
-           <a class="cbtnn1" href="doctordetails.php?docid='. $sno .'">See More</a>
+        <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>
          
            ';
            ?>
