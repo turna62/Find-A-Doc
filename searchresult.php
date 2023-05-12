@@ -21,8 +21,31 @@
 @import url("https://fonts.googleapis.com/css??family=Poppins:wght@400;500;600;700&display=swap");
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+   rel="stylesheet"
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+   integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+   crossorigin="anonymous"
+  />
+  <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <title>Filter Doctors By Location</title>
+</head>
+
+<style>
+
+@import url("https://fonts.googleapis.com/css??family=Poppins:wght@400;500;600;700&display=swap");
+
+
 body{
-    background-color: rgb(240, 221, 136);
+    background-color: rgb(50, 146, 184);
     overflow-x: hidden;
 }
 
@@ -31,15 +54,15 @@ body{
 .cbtnn1 {
   border: none;
   outline: none;
-  padding: 3px 3px;
+  padding: 4px 4px;
   cursor: pointer;
   color: white;
   position: relative;
-  text-decoration: none;
+  text-decoration : none;
   top: 20px;
   border-radius: 5px;
-  background-color: rgb(80, 31, 19) ;
-  right : 2px;
+  background-color: rgb(9, 52, 69);
+  left: 10px;
 }
 
 
@@ -51,98 +74,80 @@ body{
 .cbtnn2 {
   border: none;
   outline: none;
-  padding: 3px 3px;
+  padding: 4px 4px;
   cursor: pointer;
   color: white;
   position: relative;
   text-decoration : none;
-  left: 10px;
-  top: 20px;
+  left: 6px;
+  top: 10px;
   border-radius: 5px;
   background-color: rgb(80, 31, 19) ;
 }
 
 
-.cbtnn2:hover {
-  opacity: 0.7; ;
+.cbtnn2 a:hover {
+  opacity: 0.7; 
+  text-decoration : none;
 }
-
-
-
-
-.cardfix img {
-    width: 180px;
-    top: 300px;
-    left: 100px;
-}
-
 
 .cardbtn a {
+
   border: none;
   outline: none;
   padding: 8px 8px;
   cursor: pointer;
   color: rgb(80, 31, 19);
-  }
+  
+}
 
 .cardbtn a:hover
 {
   opacity: 0.7;
 }
 
-
-.cardfix{
-  height: 370px;
+.cardfix {
   position: relative;
-  left: 50px;
+  left: 200px;
   width: 80%;
   cursor : pointer;
-  bottom: 220px;
 }
-
-.cardfix .card {
-  height: 325px;
-}
-
-.cardfix img {
-  width: 180px;
-  height: 120px;
-}
-
 
 .card:hover {
   box-shadow: 0 8px 16px 0 grey;
   transform: translate3D(0,-1px,0) scale(1.03);
 } 
 
+.card{
+  height: 180px;
+  position: relative;
+  top: 50px;
+  right: 20px;
+  width: 150px;
+  background: white;
+}
+.card-title {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+}
+.card-text {
+  position: relative;
+  left: 10px;
+  font-size: 17px;
+}
+
 .heading{
   position: relative;
-  left: 62px;
-  bottom : 175px;
+  left: 200px;
+  top : 80px;
   font-size: 25px;
   color: rgb(80, 31, 19);
-
+  font-family: 'Times New Roman', Times, serif;
 }
 
 
-/* .handrice{
-  width: 150px;
-  height: 150px;
-  position: relative;
-  left: 350px;
-} */
-/* .rrflogo{
-  width: 200px;
-  height: 100px;
-  position: relative;
-  bottom: 250px;
-} */
-.credentials{
-  color: rgb(80, 31, 19);
-  position: relative;
-  left: 515px;
-  bottom: 130px;
-}
 .card-body .card-text2 i{
   color: rgba(248, 197, 70, 0.964);
 }
@@ -155,60 +160,30 @@ body{
   font-size: 18px;
   color: rgb(80, 31, 19);
   font-weight: 600;
+  bottom: 20px;
 }
-.cardifix{
+.card .card-body .card-text1 i{
+    bottom: 50px;
+}
+.alert{
   position: relative;
-  left: 100px;
-  width: 77%;
-  cursor : pointer;
-  bottom: 50px;
+  top: 40px;
+  right: 10px;
+}
+.rrflogo{
+  height:80px;
+
 }
 
-.cardifix .card {
-  height: 370px;
-  position: relative;
-}
-
-.cardifix img {
-  width: 180px;
-  height: 120px;
-}
-.heading u{
-  position: relative;
-  left: 53px;
-  color: rgb(80, 31, 19);
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.cbtnn3 {
-      background-color:rgb(80, 31, 19);
-      color: white;
-      padding: 3px 72px;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-      float: right;
-      text-decoration : none;
-      position: relative;
-      left: 4px;
-      top: 30px;
-      outline: none;   
-}
-
-
-.cbtnn3 a:hover {
-  opacity: 0.7; 
-  text-decoration : none;
-}
-
-.logo .rrflogo{
- width : 190px;
-    bottom: 20px;
+.alert {
+  font-size: 18px;
 }
 
 </style>
 
 <body>
+
+<div class="wholefix">
    <!-- <div class="logo">
 
         <img class="rrflogo" src="cover.png" alt="logo">
@@ -243,8 +218,6 @@ body{
 
     
   ?>
-
-  
 
 
 
