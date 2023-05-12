@@ -249,7 +249,7 @@ body{
 <?php
         echo '
         <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>   
-        <a class="cbtnn3" href="writereview.html?docid='. $sno .'">Review Here</a>                   
+        <a class="cbtnn3" href="writereview.php?docid='. $sno .'">Review Here</a>                   
         <a class="cbtnn2" href="showreview.html?docid='. $sno .'">Reviews</a>           
                    
            ';
