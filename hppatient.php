@@ -101,13 +101,30 @@ body{
   cursor: pointer;
   color:  rgb(9, 52, 69);
   position: relative;
-  left: 125px;
+  left: 35px;
   top: 45px;
   border-radius: 10px;
 }
 
 
 .btnn:hover {
+  background-color:  rgb(9, 52, 69) ;
+  color: white;
+}
+
+.bttnn {
+  border: none;
+  outline: none;
+  padding: 8px 8px;
+  cursor: pointer;
+  color:  rgb(9, 52, 69);
+  position: relative;
+  left: 1000px;
+  border-radius: 10px;
+}
+
+
+.bttnn:hover {
   background-color:  rgb(9, 52, 69) ;
   color: white;
 }
@@ -174,6 +191,8 @@ body{
   });
         
     </script>
+
+<button class="bttnn" onclick="window.location.href='patientprofile.html';">My Profile <i class='fas fa-user-circle'></i></button>
 
         <button class="btnn show" onclick="window.location.href='showall.php';"> Show All</button>
         <button class="btnn" onclick="window.location.href='checklocation.php';"> Location</button>
