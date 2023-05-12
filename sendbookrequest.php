@@ -10,9 +10,10 @@ $dbname = "findadoc";
 
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
-$tomail = $_POST['email'];
+$tomail = $_POST['tomail'];
 $date = $_POST['date'];
 $time = $_POST['time'];
+
 
 session_start();
 $frommail = $_SESSION['patientemail'];
@@ -21,7 +22,7 @@ if (mysqli_connect_error()) {
   die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
 }
 
-function sendMail($patientemail) {
+function sendMail($tomail) {
     require ("PHPMailer/PHPMailer.php"); 
     require ("PHPMailer/SMTP.php");
     require ("PHPMailer/Exception.php");
@@ -40,7 +41,7 @@ function sendMail($patientemail) {
     $mail->setFrom("find.a.doc.983@gmail.com"); 
     $mail->Body = "Dear doctor, you have a booking request! Click the link to accept or decline"
                    ;
-    $mail->addAddress($patientemail);
+    $mail->addAddress($tomail);
 
     if($mail->Send()){
         return true;
