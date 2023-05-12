@@ -99,7 +99,7 @@ body{
   height: 180px;
   position: relative;
   top: 50px;
-  right: 20px;
+  left: 20px;
   width: 150px;
   background: white;
 }
