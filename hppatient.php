@@ -91,7 +91,7 @@ body{
 }
 
 .search-btn:hover {
-    color: rgb(100, 91, 148);
+    color:  rgb(9, 52, 69);
 }
 
 .btnn {
@@ -99,7 +99,7 @@ body{
   outline: none;
   padding: 8px 8px;
   cursor: pointer;
-  color: rgb(80, 31, 19);
+  color:  rgb(9, 52, 69);
   position: relative;
   left: 125px;
   top: 45px;
@@ -108,7 +108,7 @@ body{
 
 
 .btnn:hover {
-  background-color: rgb(155, 113, 58) ;
+  background-color:  rgb(9, 52, 69) ;
   color: white;
 }
 

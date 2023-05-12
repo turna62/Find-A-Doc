@@ -22,7 +22,7 @@
 
 
 body{
-    background-color: rgb(240, 221, 136);
+    background-color: rgb(50, 146, 184);
     overflow-x: hidden;
 }
 
@@ -38,8 +38,8 @@ body{
   text-decoration : none;
   top: 20px;
   border-radius: 5px;
-  background-color: rgb(80, 31, 19) ;
-  right: 2px;
+  background-color: rgb(9, 52, 69);
+  left: 10px;
 }
 
 
@@ -57,7 +57,7 @@ body{
   position: relative;
   text-decoration : none;
   left: 6px;
-  top: 20px;
+  top: 10px;
   border-radius: 5px;
   background-color: rgb(80, 31, 19) ;
 }
@@ -67,19 +67,6 @@ body{
   opacity: 0.7; 
   text-decoration : none;
 }
-
-
-
-img {
-    width: 180px;
-    height: 145px;
-    top: 300px;
-    left: 100px;
-}
-
-
-
-
 
 .cardbtn a {
 
@@ -109,12 +96,24 @@ img {
 } 
 
 .card{
-  height: 330px;
+  height: 180px;
   position: relative;
   top: 50px;
   right: 20px;
+  width: 150px;
+  background: white;
 }
-
+.card-title {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-size: 18px;
+}
+.card-text {
+  position: relative;
+  left: 10px;
+  font-size: 17px;
+}
 
 .heading{
   position: relative;
@@ -151,6 +150,10 @@ img {
 .rrflogo{
   height:80px;
 
+}
+
+.alert {
+  font-size: 18px;
 }
 
 </style>
@@ -231,8 +234,7 @@ img {
     
 <?php
         echo '
-           <a class="cbtnn1" href="doctordetails.php?docid='. $sno .'">See More</a>
-        
+        <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>        
            
            ';
            ?>
