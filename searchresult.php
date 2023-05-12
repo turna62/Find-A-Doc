@@ -261,8 +261,7 @@ body{
        
         <?php
          echo '
-           <a class="cbtnn1" href="doctordetails.php?docid='. $sno .'">See More</a>
-           
+         <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>           
            ';
            ?>
 

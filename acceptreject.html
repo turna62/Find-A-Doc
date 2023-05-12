@@ -34,14 +34,14 @@ label {
     position: relative;
     right: 10px;
 }
-.banner form input[type="submit"]{
+.banner .cbtnn1{
     float: left;
   display: block;
   color: rgb(219, 216, 216);
   text-align: center;
   padding: 8px;
   text-decoration:none;
-  font-size: 13px;
+  font-size: 15px;
   background-color: rgb(9, 52, 69);
   margin: 10px;
   border-radius: 5px;
@@ -49,7 +49,7 @@ label {
   border: none;
   position: relative;
   top: 40px;
-  left: 240px;
+  left: 210px;
 }
 .banner form input[type="email"]{
     width: 220px;
@@ -68,30 +68,21 @@ label {
     top: 15px;
 }
 h2{
-    color:white;
+    color:  rgb(9, 52, 69);
     position: relative;
-    top: 50px;
+    top: 80px;
 }
     </style>
 <body>
     
 <div class = "banner"> 
-    <h2>Accept Booking Request</h2>
+    <h2>Do you want to accept booking request?</h2>
 <!--  -->
   <form method = "GET" action = "submitlocation.php" >
         <div class = "attribute">
-     <div class="check">  
-    <input type="checkbox" name="doctorlocation[]" value="Boardbazar">
-    <label>Boardbazar</label>
-    <input type="checkbox" name="doctorlocation[]" value="Joydebpur">
-    <label>Joydebpur</label>
-    <input type="checkbox" name="doctorlocation[]" value="Kalameshwar">
-    <label>Kalameshwar</label>
-    <input type="checkbox" name="doctorlocation[]" value="Kaligonj">
-    <label>Kaligonj</label>
-   
-</div>
-    <input type="submit" name = "submit" >
+            <button class="cbtnn1" onClick={this.handleAccSubmit}>Accept </button>
+            <button class="cbtnn1" onClick={this.handleDecSubmit}>Decline</button></div>
+          
 </form>
                                       
     </div>
