@@ -192,7 +192,7 @@ body{
         
     </script>
 
-<button class="bttnn" onclick="window.location.href='patientprofile.html';">My Profile <i class='fas fa-user-circle'></i></button>
+<button class="bttnn" onclick="window.location.href='patientprofile.php';">My Profile <i class='fas fa-user-circle'></i></button>
 
         <button class="btnn show" onclick="window.location.href='showall.php';"> Show All</button>
         <button class="btnn" onclick="window.location.href='checklocation.php';"> Location</button>

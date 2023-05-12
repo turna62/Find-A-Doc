@@ -1,9 +1,26 @@
 
+<?php
+
+error_reporting();
+
+$host = "localhost";
+$dbUsername = "root";
+$dbPassword = "";
+$dbname = "findadoc";
+
+$conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
+
+  
+if (!$conn) {
+  echo "Connection failed!";
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
       <title>
-        Find-A-Doc Doctor's Profile
+        Find-A-Doc Patient's Profile
       </title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -23,7 +40,7 @@
         font-size: 18px;
         font-style: normal;
         position: relative;
-        top: 70px;
+        top: 100px;
         }
 
     .banner{
@@ -73,37 +90,23 @@
             <label>Name:</label>
             <?php
               session_start();
-              echo $_SESSION['username'];
+              echo $_SESSION['patientname'];
             ?>
           </div>
 
           <div class = "attribute">
             <label>Location:</label>
             <?php
-              echo $_SESSION['ulocation'];
+              echo $_SESSION['patientlocation'];
             ?>
           </div>
 
           <div class = "attribute">
             <label>Email:</label>
             <?php
-              echo $_SESSION['useremail'];
+              echo $_SESSION['patientemail'];
             ?>
           </div> 
-
-           <div class = "attribute">
-            <label>Speciality:</label>
-            <?php
-              echo $_SESSION['userfavcuisine'];
-            ?>
-          </div>
-           
-            <div class="btn" id="btn">
-            
-             <a href="viewbookingrequest.html" target="_self"> View Booking Request</a>
-             <div class="btn" id="btn">
-            
-          
         </div> 
           
 

@@ -31,7 +31,7 @@ if (isset($doctoremail) && isset($doctorpassword)) {
 				$_SESSION['doctorname'] = $row['doctorname'];
 				$_SESSION['doctorlocation'] = $row['doctorlocation'];
 							
-                header("Location: doctorprofile.html");
+                header("Location: doctorprofile.php");
                 exit();
 				
             }
