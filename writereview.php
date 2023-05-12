@@ -139,17 +139,44 @@ form .btn button:hover{
 
   
   <body>
+  <?php 
+    require 'dbConfig.php';
 
+    if (isset($_GET['docid'])) {
+      $sno = $_GET['docid'];
+      
+      
+    
+    $query = "SELECT * FROM doctor where doctorstatus = 1 and doctorid = '$sno'";
+    $query_run = mysqli_query($db, $query);
+
+    $check_user = mysqli_num_rows($query_run) > 0;
+
+    if($check_user)
+    {
+      while($row = mysqli_fetch_assoc($query_run))
+      {
+        ?>
+    
+    <?php
+        $doctorname = $row['doctorname'];
+        $doctorlocation = $row['doctorlocation'];
+       }
+    }
+   
+      
+    }
+    
+      ?>
   
 <div class=credentials>
-<h1 class="restname"> </h1> 
-            <h3 class="restlocation"></h3> 
-            <h4 class="restlocation2"></h1>
+<h1 class="restname"> <?php echo $doctorname; ?></h1> 
+            <h3 class="restlocation"><?php echo $doctorlocation; ?></h3> 
             
     </div>
     
       
-    <form action="submitdoctorreview.php?fid='. $sno2 .'" method="post" enctype="multipart/form-data">
+    <form action="submitdoctorreview.php?docid='.$sno.'" method="post" enctype="multipart/form-data">
 
     <div class="container">
     <p class="intro">Rate here..</p>
@@ -174,5 +201,6 @@ form .btn button:hover{
       </div>
     </div>
 
+    
    </body>
 </html>
