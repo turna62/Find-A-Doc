@@ -28,7 +28,7 @@ error_reporting(0);
 
 
 body{
-    background-color: rgb(240, 221, 136);
+    background-color: rgb(50, 146, 184);
     overflow-x: hidden;
 }
 
@@ -48,7 +48,7 @@ body{
     background: #fff;
     font-size: 18px;
     padding: 0 60px 0 20px;
-}
+} 
 
 .search-box {
     height: 50px;
@@ -102,7 +102,7 @@ body{
   color: rgb(80, 31, 19);
   position: relative;
   left: 125px;
-  top: 10px;
+  top: 45px;
   border-radius: 10px;
 }
 
