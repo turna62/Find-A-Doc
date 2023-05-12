@@ -36,7 +36,7 @@ body{
   color: white;
   position: relative;
   text-decoration : none;
-  top: 20px;
+  top: 0px;
   border-radius: 5px;
   background-color: rgb(9, 52, 69);
   left: 10px;
@@ -47,7 +47,6 @@ body{
   opacity: 0.7; 
   text-decoration : none;
 }
-
 .cbtnn2 {
   border: none;
   outline: none;
@@ -56,14 +55,33 @@ body{
   color: white;
   position: relative;
   text-decoration : none;
-  left: 6px;
-  top: 10px;
+  top: 20px;
   border-radius: 5px;
-  background-color: rgb(80, 31, 19) ;
+  background-color: rgb(9, 52, 69);
+  left: 10px;
 }
 
 
-.cbtnn2 a:hover {
+.cbtnn2:hover {
+  opacity: 0.7; 
+  text-decoration : none;
+}
+.cbtnn3 {
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: white;
+  position: relative;
+  text-decoration : none;
+  top: 10px;
+  border-radius: 5px;
+  background-color: rgb(9, 52, 69);
+  left: 10px;
+}
+
+
+.cbtnn3:hover {
   opacity: 0.7; 
   text-decoration : none;
 }
@@ -96,10 +114,9 @@ body{
 } 
 
 .card{
-  height: 180px;
+  height: 210px;
   position: relative;
   top: 50px;
-  right: 20px;
   width: 150px;
   background: white;
 }
@@ -159,9 +176,6 @@ body{
 </style>
 
 <body>
-
-
-
 
 <div class="wholefix">
 
@@ -234,12 +248,14 @@ body{
     
 <?php
         echo '
-        <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>        
-           
+        <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>   
+        <a class="cbtnn3" href="writereview.html?docid='. $sno .'">Review Here</a>                   
+        <a class="cbtnn2" href="showreview.html?docid='. $sno .'">Reviews</a>           
+                   
            ';
            ?>
 
-      </div>
+      </div> 
       </div>
       </div>
                                   

@@ -34,7 +34,7 @@ body{
   color: white;
   position: relative;
   text-decoration : none;
-  top: 20px;
+  top: 0px;
   border-radius: 5px;
   background-color: rgb(9, 52, 69);
   left: 10px;
@@ -45,7 +45,6 @@ body{
   opacity: 0.7; 
   text-decoration : none;
 }
-
 .cbtnn2 {
   border: none;
   outline: none;
@@ -54,14 +53,33 @@ body{
   color: white;
   position: relative;
   text-decoration : none;
-  left: 6px;
-  top: 10px;
+  top: 20px;
   border-radius: 5px;
-  background-color: rgb(80, 31, 19) ;
+  background-color: rgb(9, 52, 69);
+  left: 10px;
 }
 
 
-.cbtnn2 a:hover {
+.cbtnn2:hover {
+  opacity: 0.7; 
+  text-decoration : none;
+}
+.cbtnn3 {
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: white;
+  position: relative;
+  text-decoration : none;
+  top: 10px;
+  border-radius: 5px;
+  background-color: rgb(9, 52, 69);
+  left: 10px;
+}
+
+
+.cbtnn3:hover {
   opacity: 0.7; 
   text-decoration : none;
 }
@@ -94,7 +112,7 @@ body{
 } 
 
 .card{
-  height: 180px;
+  height: 210px;
   position: relative;
   top: 50px;
   width: 150px;
@@ -153,17 +171,20 @@ body{
 .alert {
   font-size: 18px;
 }
-
+h2{
+  color: white;
+  position: relative;
+  top: 20px;
+  left: 40px;
+}
 </style>
 
 <body>
 
+<h2>Showing search results...</h2>
+
 <div class="wholefix">
-   <!-- <div class="logo">
-
-        <img class="rrflogo" src="cover.png" alt="logo">
-
-    </div> -->
+  
   <?php require 'dbConfig.php';
   
      
@@ -176,22 +197,10 @@ body{
            // $category = $_POST['category'];
       $sno = $_GET['docid'];
       
+         ?>
       
-
-       
-
-      ?>
-
-         
-           
-            
-        
         <?php
 
-
-
-
-    
   ?>
 
 
@@ -227,16 +236,12 @@ body{
             <h5 class="card-title" id="rname"><?php echo $row['doctorname']; ?></h5>
             <p class="card-text" id="rname"><?php echo $row['doctorlocation']; ?></p>
             <p class="card-text" id="rname"><?php echo $row['doctorcategory']; ?></p>
-            
-         
-
-           
-
-          
-       
+                  
         <?php
          echo '
-         <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>           
+         <a class="cbtnn1" href="sendbookreq.html?docid='. $sno .'">Send Request</a>   
+         <a class="cbtnn3" href="writereview.html?docid='. $sno .'">Review Here</a>                   
+         <a class="cbtnn2" href="showreview.html?docid='. $sno .'">Reviews</a>           
            ';
            ?>
 

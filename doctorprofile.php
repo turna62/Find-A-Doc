@@ -78,7 +78,7 @@ if (!$conn) {
 }
 
 h2{
-  color: white;
+  color: rgb(9, 52, 69);
   position: relative;
   top: 60px;
 }
