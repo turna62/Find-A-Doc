@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -43,7 +42,7 @@ session_start();
     
 }
 body{
-    background-color: rgb(240, 221, 136);
+    background-color: rgb(106, 159, 180);
     overflow-x: hidden;
 }
 a{
@@ -60,16 +59,15 @@ a{
 .testimonial-heading h1{
     font-size: 1.8rem;
     font-weight: 500;
-    background-color: rgb(80, 31, 19);
-    color: #ffffff;
+    color: rgb(9, 52, 69);
     padding: 10px 20px;
     position: relative;
-    bottom: 10px;
-    right: 100px;
+    right: 60px;
+    top: 60px;
 }
 .testimonial-box-container{
     position: relative;
-    bottom: 90px;
+    top: 60px;
 }
 .testimonial-box{
     
@@ -77,9 +75,8 @@ a{
     width: 850px;
     height: 150px;
     cursor: pointer;
-    background-color: rgba(248, 239, 202, 0.975);
+    background-color: rgb(181, 228, 247);
     position: relative;
-    left: 20px;
     border-radius: 10px;
 }
 .name-user strong{
@@ -105,8 +102,8 @@ a{
     font-size: 1.1rem;
     color: #4b4b4b;
     position: relative;
-    bottom: 40px;
     left: 30px;
+    top: 25px;
 }
 .client-commenttime p{
     font-size: 0.9rem;
@@ -139,18 +136,6 @@ a{
     transition: all ease 0.3s;
 }
  
-::selection{
-    color: #ffffff;
-    background-color: #252525;
-}
-
-img {
-    width: 180px;
-    height: 80px;
-    top: 350px;
-    left: 100px;
-}
-
 .totalrate{
 font-weight: 700;
 font-size: 22px;
@@ -164,23 +149,22 @@ bottom: 120px;
 .totalreview{
 font-weight: 700;
 font-size: 22px;
-color: rgb(80, 31, 19);
+color: rgb(9, 52, 69);
 font-family: 'Times New Roman', Times, serif;
 position: relative;
-right:516px;
-bottom: 130px;
+right:500px;
 }
 
 .totalrate i{
     color: rgba(248, 174, 70, 0.964);
 }
 .credentials{
-color: rgb(80, 31, 19);
+color: rgb(9, 52, 69);
 font-family: 'Times New Roman', Times, serif;
 position: relative;
 font-size: 25px;
-left: 450px;
-bottom: 40px;
+left: 430px;
+top: 50px;
 }
 
 .credentials .restlocation{
@@ -194,6 +178,7 @@ u{
 .credentials .restname{
     position: relative;
     left: 23px;
+    top: 100px;
 }
 
 
@@ -209,7 +194,7 @@ u{
 
             require 'dbConfig.php';
       $sno = $_GET['docid'];
-      $query = "SELECT doctorname, doctorlocation, doctorid FROM doctor where status = 1 and doctor.doctorid = $sno";
+      $query = "SELECT doctorname, doctorlocation, doctorid FROM doctor where doctorstatus = 1 and doctor.doctorid = $sno";
       $query_run = mysqli_query($db, $query);
       $check_user = mysqli_num_rows($query_run) > 0;
       
@@ -227,8 +212,8 @@ u{
       ?>
 
     <div class=credentials>
-            <h1 class="restname"> <?php echo $doctorname; ?></h1> 
-            <h4 class="restlocation"><?php echo $doctorlocation; ?></h1>
+            <h1 class="">Doctor: <?php echo $doctorname; ?></h1> 
+            <h4 class="restlocation">Location: <?php echo $doctorlocation; ?></h1>
             
     </div>
 
@@ -300,7 +285,7 @@ $result = mysqli_query($db, $showr);
                         
                         <!--name-and-username-->
                         <div class="name-user">
-                            <strong><?php echo $row['rpatientname']."<br/>"?></strong>
+                            <strong>Patient: <?php echo $row['rpatientname']."<br/>"?></strong>
                         </div>
 
                         <!-- <div class="client-commenttime">
@@ -313,7 +298,7 @@ $result = mysqli_query($db, $showr);
                 </div>
                 <!--Comments---------------------------------------->
                 <div class="client-comment">
-                    <p><?php echo $row['review']."<br/>" ?></p>
+                    <p>Comment: <?php echo $row['review']."<br/>" ?></p>
               </div>
             
          </div>
