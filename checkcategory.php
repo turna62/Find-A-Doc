@@ -25,7 +25,7 @@ body{
   margin: auto;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(50, 146, 184);
+  background-color: rgb(131, 208, 239);
   position: relative;
   top: 100px;
   border-radius: 5px;

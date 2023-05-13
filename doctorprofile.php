@@ -49,7 +49,7 @@ if (!$conn) {
   margin: auto;
   text-align: center;
   font-family: arial;
-  background-color: rgb(50, 146, 184);
+  background-color: rgb(131, 208, 239);
   position: relative;
   top: 100px;
   border-radius: 5px;
@@ -114,7 +114,7 @@ h2{
            <div class = "attribute">
             <label>Speciality:</label>
             <?php
-               //echo $_SESSION['doctorcategory'];
+               echo $_SESSION['doctorcategory'];
             ?> 
           </div>
            

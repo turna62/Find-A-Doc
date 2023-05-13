@@ -50,33 +50,13 @@ if (!$conn) {
   margin: auto;
   text-align: center;
   font-family: arial;
-  background-color: rgb(50, 146, 184);
+  background-color: rgb(131, 208, 239);
   position: relative;
   top: 100px;
   border-radius: 5px;
     }
 
     
-.btn a {
-  float: left;
-  display: block;
-  color: rgb(219, 216, 216);
-  text-align: center;
-  padding: 8px;
-  text-decoration:none;
-  font-size: 13px;
-  background-color:rgb(9, 52, 69);
-  margin: 10px;
-  border-radius: 5px;
-  position: relative;
-  top: 90px;
-  left: 210px;
-  font-size: 15px;
-}
-
-.btn :hover{
-  opacity: 0.7;
-}
 
 h2{
   color: rgb(9, 52, 69);

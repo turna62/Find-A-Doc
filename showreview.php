@@ -42,7 +42,7 @@ session_start();
     
 }
 body{
-    background-color: rgb(106, 159, 180);
+    background-color: rgb(131, 208, 239);
     overflow-x: hidden;
 }
 a{
