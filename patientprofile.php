@@ -100,13 +100,6 @@ h2{
           </div>
 
           <div class = "attribute">
-            <label>Location:</label>
-            <?php
-              echo $_SESSION['patientlocation'];
-            ?>
-          </div>
-
-          <div class = "attribute">
             <label>Email:</label>
             <?php
               echo $_SESSION['patientemail'];

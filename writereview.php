@@ -129,9 +129,9 @@ form .btn button:hover{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .credentials {
-  color: rgb(9, 52, 69);
+  color: white;
   position: relative;
-  bottom: 30px;
+  bottom: 10px;
 }
 
 
@@ -141,47 +141,39 @@ form .btn button:hover{
   <body>
   <?php 
     require 'dbConfig.php';
+    $sno = $_GET['docid'];
 
-    if (isset($_GET['docid'])) {
-      $sno = $_GET['docid'];
-      
-      
-    
-    $query = "SELECT * FROM doctor where doctorstatus = 1 and doctorid = '$sno'";
-    $query_run = mysqli_query($db, $query);
+      $query = "SELECT doctorname, doctorlocation FROM doctor where doctorstatus = 1 and doctorid = '$sno'";
+      $query_run = mysqli_query($db, $query);
 
-    $check_user = mysqli_num_rows($query_run) > 0;
+      $check_user = mysqli_num_rows($query_run) > 0;
 
-    if($check_user)
-    {
-      while($row = mysqli_fetch_assoc($query_run))
+      if($check_user)
       {
-        ?>
+        while($row = mysqli_fetch_assoc($query_run))
+        {
+          $doctorname = $row['doctorname'];
+          $doctorlocation = $row['doctorlocation'];
+        }
+      }
     
-    <?php
-        $doctorname = $row['doctorname'];
-        $doctorlocation = $row['doctorlocation'];
-       }
-    }
-   
-      
-    }
-    
-      ?>
-  
+?>
+
 <div class=credentials>
-<h1 class="restname"> <?php echo $doctorname; ?></h1> 
-            <h3 class="restlocation"><?php echo $doctorlocation; ?></h3> 
+<h1 class="">Doctor's Name: <?php echo $doctorname; ?></h1> 
+            <h3 class="">Location: <?php echo $doctorlocation; ?></h3> 
             
     </div>
     
-      
+    <?php
+echo '
+
     <form action="submitdoctorreview.php?docid='.$sno.'" method="post" enctype="multipart/form-data">
 
     <div class="container">
-    <p class="intro">Rate here..</p>
+    <p class="intro">Review here..</p>
       <div class="post">
-        <div class="text">Thanks for rating!</div>
+        <div class="text">Thanks for reviewing!</div>
         <div class="edit">EDIT</div>
       </div>
       <div class="star-widget">
@@ -201,6 +193,8 @@ form .btn button:hover{
       </div>
     </div>
 
+    ';
+?>
     
    </body>
 </html>
