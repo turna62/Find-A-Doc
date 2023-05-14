@@ -120,7 +120,9 @@ h2{
            
             <div class="btn" id="btn">
             
-             <a href="viewbookingrequest.html" target="_self"> View Booking Request</a>
+             <a href="doctorviewreq.php" > View Booking Requests</a>
+             
+             <a href="mypatients.php" > My Patients</a>
              <div class="btn" id="btn">
             
           
