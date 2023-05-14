@@ -190,7 +190,8 @@ body{
     </script>
 
 <button class="bttnn" onclick="window.location.href='patientprofile.php';">My Profile <i class='fas fa-user-circle'></i></button>
-
+<button class="bttnn" onclick="window.location.href='myappointments.php';">My Appointments <i class='fas fa-user-circle'></i></button>
+<button class="bttnn" onclick="window.location.href='patientviewreq.php';">My Requests <i class='fas fa-user-circle'></i></button>
         <button class="btnn show" onclick="window.location.href='showall.php';"> Show All</button>
         <button class="btnn" onclick="window.location.href='checklocation.php';"> Location</button>
         <button class="btnn" onclick="window.location.href='checkcategory.php';"> Category</button>

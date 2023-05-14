@@ -27,7 +27,7 @@
 <html>
   <head>
       <title>
-        Project Intuition
+  
       </title>
       <link rel = "stylesheet" href = "dashboardtutor.css">
   </head>
