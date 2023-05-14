@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filter Doctors By Category</title>
+    <title>Accept Booking Request</title>
     </head>
     <style>
 body{
-    background-color: rgb(9, 52, 69);
+    background-color:rgb(9, 52, 69);
 }
 .attribute {
         font-size: 18px;
         font-style: normal;
         position: relative;
-        top: 50px;
+        top: 60px;
         left: 10px;
         font-family: 'Times New Roman', Times, serif;
         }
@@ -25,28 +25,23 @@ body{
   margin: auto;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(131, 208, 239);
+  background-color: rgb(50, 146, 184);
   position: relative;
   top: 100px;
   border-radius: 5px;
     }
-img {
-    width: 180px;
-    top: 300px;
-    left: 100px;
-}
 label {
     position: relative;
     right: 10px;
 }
-.banner form input[type="submit"]{
+.banner .cbtnn1{
     float: left;
   display: block;
-  color: white;
+  color: rgb(219, 216, 216);
   text-align: center;
   padding: 8px;
   text-decoration:none;
-  font-size: 13px;
+  font-size: 15px;
   background-color: rgb(9, 52, 69);
   margin: 10px;
   border-radius: 5px;
@@ -54,7 +49,7 @@ label {
   border: none;
   position: relative;
   top: 40px;
-  left: 240px;
+  left: 210px;
 }
 .banner form input[type="email"]{
     width: 220px;
@@ -67,42 +62,27 @@ label {
 }
 .banner .check{
     font-family: 'Times New Roman', Times, serif;
-    color: rgb(46, 16, 9);
+    color:  rgb(9, 52, 69);
     position: relative;
     right: 20px;
     top: 15px;
 }
 h2{
-    color: white;
+    color:  rgb(9, 52, 69);
     position: relative;
-    top: 55px;
+    top: 80px;
 }
     </style>
 <body>
     
 <div class = "banner"> 
-<h2>Filter By Category</h2>
+    <h2>Do you want to accept booking request?</h2>
 <!--  -->
-  <form method = "GET" action = "submitcategory.php" >
+  <form  >
         <div class = "attribute">
-     <div class="check">  
-    <input type="checkbox" name="doctorcategory[]" value="Dentist">
-    <label>Dentist</label>
-    <input type="checkbox" name="doctorcategory[]" value="Psychiatrist">
-    <label>Psychiatrist</label>
-    <input type="checkbox" name="doctorcategory[]" value="Cardiologist">
-    <label>Cardiologist</label>
-    <input type="checkbox" name="doctorcategory[]" value="Gynecologist">
-    <label>Gynecologist</label>
-    <input type="checkbox" name="doctorcategory[]" value="Oncologist">
-    <label>Oncologist</label>
-    <input type="checkbox" name="doctorcategory[]" value="Pediatrician">
-    <label>Pediatrician</label>
-    <input type="checkbox" name="doctorcategory[]" value="Orthopedist">
-    <label>Orthopedist</label>
-   
-</div>
-    <input type="submit" name = "submit" >
+            <button class="cbtnn1" onClick={this.handleAccSubmit}>Accept </button>
+            <button class="cbtnn1" onClick={this.handleDecSubmit}>Decline</button></div>
+          
 </form>
                                       
     </div>
