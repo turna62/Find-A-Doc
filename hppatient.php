@@ -49,32 +49,14 @@ body{
 
 .search-box {
     height: 50px;
-    width: 600px;
+    width: 520px;
     color: #fff;
     position: relative;
     left: 100px;
     top: 30px;
+    border: 2px solid rgb(50, 146, 184);
 }
 
-
-.result{
-        position: absolute;        
-        z-index: 999;
-        top: 100%;
-        left: 0;
-    }
-
-.result p{
-        margin: 0;
-        padding: 7px 10px;
-        border: 1px solid #CCCCCC;
-        border-top: none;
-        cursor: pointer;
-    }
-
-.result p:hover{
-        background: #f2f2f2;
-    }
 
 
 .search-btn {
@@ -132,6 +114,13 @@ body{
   color: white;
 }
 
+#search_result{
+    position: relative;
+    top: 30px;
+    background-color: rgb(231, 234, 239);
+    width: 600px;
+
+}
 
 </style>
 
