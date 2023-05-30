@@ -61,14 +61,14 @@ label {
     left: 7px;
 }
 .banner .check{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif; 
     color:  rgb(9, 52, 69);
     position: relative;
     right: 20px;
     top: 15px;
 }
 h2{
-    color:white;
+    color:rgb(9, 52, 69);
     position: relative;
     top: 50px;
 }
@@ -76,7 +76,7 @@ h2{
 <body>
     
 <div class = "banner"> 
-    <h2>Accept Booking Request</h2>
+    <h2>Filter Doctors By Location</h2>
 <!--  -->
   <form method = "GET" action = "submitlocation.php" >
         <div class = "attribute">

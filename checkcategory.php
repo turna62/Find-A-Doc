@@ -73,7 +73,7 @@ label {
     top: 15px;
 }
 h2{
-    color: white;
+    color: rgb(9, 52, 69);
     position: relative;
     top: 55px;
 }
@@ -81,7 +81,7 @@ h2{
 <body>
     
 <div class = "banner"> 
-<h2>Filter By Category</h2>
+<h2>Filter Doctors By Category</h2>
 <!--  -->
   <form method = "GET" action = "submitcategory.php" >
         <div class = "attribute">
