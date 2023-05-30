@@ -9,14 +9,14 @@
 }
 
 body {
-    font-family: Mukta, sans-serif;
+   
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     color: #4f546c;
     font-size: 0.9rem;
-    background-color: #f9fbff;
+    background-color: rgb(50, 146, 184);
     padding-top: 90px;
     /* Increase the top padding to move the content lower */
 }
@@ -28,7 +28,7 @@ table {
     text-align: left;
     overflow: hidden;
     margin-top: 70px;
-    margin-right: 120px;
+    margin-right: 20px;
     /* Increase the margin-top to move the table lower */
 }
 
@@ -42,47 +42,43 @@ table th {
     padding: 1rem 2rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    font-size: 0.7rem;
-    font-weight: 900;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    /* Change the font family to your preferred font */
+    color: #333333;
+    /* Set the font color */
+}
+
+@media screen and (max-width: 768px) {
+    table th {
+        font-size: 0.8rem;
+    }
 }
 
 table td {
     padding: 1rem 2rem;
+    font-family: Arial, sans-serif;
+    /* Change the font family to your preferred font */
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #333333;
+    /* Set the font color */
 }
 
-table a {
-    text-decoration: none;
-    color: #2962ff;
+@media screen and (max-width: 768px) {
+    table td {
+        font-size: 0.8rem;
+    }
 }
 
-table .status {
-    border-radius: 0.2rem;
-    background-color: red;
-    padding: 0.2rem 1rem;
-    text-align: center;
-}
-
-table .status-pending {
-    background-color: #fff0c2;
-    color: #a68b00;
-}
-
-table .status-paid {
-    background-color: #c8e6c9;
-    color: #388e3c;
-}
-
-table .status-unpaid {
-    background-color: #ffcdd2;
-    color: #c62828;
-}
 
 table .amount {
     text-align: right;
 }
 
 table tr:nth-child(even) {
-    background-color: #8da0d0;
+    background-color: #b3d1e3;
 }
 .action-buttons {
     display: flex;
@@ -107,4 +103,55 @@ table tr:nth-child(even) {
 .action-buttons button.reject {
     background-color: #e57373;
     color: #fff;
+}
+h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    /* Set the heading color to white */
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgb(9, 52, 69);
+    background-image: linear-gradient(rgb(50, 146, 184), rgb(9, 52, 69));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+.container {
+    position: relative;
+}
+
+.container h1 {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+table tr {
+    transition: transform 0.4s ease;
+    /* Add transition effect */
+}
+
+table tr:hover {
+    transform: translateX(5px);
+    /* Move the row horizontally when hovered */
+}
+.action-buttons button:hover {
+    opacity: 0.8;
+}
+
+.action-buttons button.accept:hover {
+    background-color: #4caf50;
+}
+
+.action-buttons button.reject:hover {
+    background-color: #f44336;
 }
