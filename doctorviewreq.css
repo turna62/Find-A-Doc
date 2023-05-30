@@ -17,7 +17,7 @@ body {
     color: #4f546c;
     font-size: 0.9rem;
     background-color: #f9fbff;
-    padding-top: 80px;
+    padding-top: 90px;
     /* Increase the top padding to move the content lower */
 }
 
@@ -27,7 +27,8 @@ table {
     background-color: white;
     text-align: left;
     overflow: hidden;
-    margin-top: 60px;
+    margin-top: 70px;
+    margin-right: 120px;
     /* Increase the margin-top to move the table lower */
 }
 
