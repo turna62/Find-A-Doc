@@ -75,8 +75,10 @@ $email = $_SESSION['doctoremail'];
               </td>
               <td>
                 <form action="processrequest.php?email=<?php echo $requester; ?>" method="post" class="action-buttons">
-                  <button type="submit" class="btn accept">Accept</button>
-                  <button type="submit" class="btn reject">Reject</button>
+                  <!-- <button type="submit" class="btn accept">Accept</button>
+                  <button type="submit" class="btn reject">Reject</button> -->
+                  <input type="submit" value="Accept" class="btn accept button" name="accept">
+                  <input type="submit" value="Reject" class="btn reject button" name="reject">
                 </form>
               </td>
 
