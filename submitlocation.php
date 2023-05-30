@@ -81,6 +81,10 @@
                       <h5 class="card-title" id="rname">Doctor:
                         <?php echo $row['doctorname']; ?>
                       </h5>
+                      <h5 class="card-text" id="remail">Email:
+                        <?php echo $row['doctoremail']; ?>
+                      </h5>
+
                       <h5 class="card-text" id="rlocation">Location:
                         <?php echo $row['doctorlocation']; ?>
                       </h5>
@@ -121,7 +125,7 @@
               }
             } else {
               echo "
-                                        <div class='alert alert-danger mt-3 text-center' role='alert'>
+                                        <div class='alert alert-danger mt-3 text-center' role='alert' style='color: white';>
                                             No doctor of location : $check found!
                                         </div>
                                         ";

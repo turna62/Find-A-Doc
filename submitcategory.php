@@ -117,7 +117,7 @@
               }
             } else {
               echo "
-                                        <div class='alert alert-danger mt-3 text-center' role='alert'>
+                                        <div class='alert alert-danger mt-3 text-center' role='alert'style='color: white';>
                                             No doctor of category : $check found!
                                         </div>
                                         ";
