@@ -66,8 +66,8 @@ body {
     position: relative;
     right: 130px;
     top: 50px;
+    box-shadow: 0 5px 10px #97999cba;
     margin-right: 20px; /* Add margin to create space between cards */
-
   }
   
   
@@ -81,7 +81,7 @@ body {
     top: 50px;
     right: 230px;
     margin-right: 20px; /* Add margin to create space between cards */
-
+    box-shadow: 0 5px 10px #97999cba;
   }
   
   .card:hover {
