@@ -9,157 +9,13 @@
 
   <!-- Bootstrap CSS -->
 
+  <link href="card.css" rel="stylesheet">
+
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 
   <title>Search Doctors</title>
 </head>
 
-<style>
-  @import url("https://fonts.googleapis.com/css??family=Poppins:wght@400;500;600;700&display=swap");
-
-  body {
-    background-color: rgb(50, 146, 184);
-    overflow-x: hidden;
-  }
-
-  .wholefix {
-    display: flex;
-    justify-content: center;
-  }
-
-  .cardfix {
-    width: 80%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-  }
-
-  .col-md-3 {
-    flex-basis: 23%;
-    margin-bottom: 30px;
-  }
-
-  .card {
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
-    background-color: #fff;
-    position: relative;
-    left: 10px;
-    top: 10px;
-    width: 25%;
-  }
-
-  .card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px) scale(1.03);
-  }
-
-  .card-body {
-    padding: 20px;
-    position: relative;
-    bottom: 20px;
-  }
-
-  .card-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #141414;
-  }
-
-  .card-text {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: #555;
-  }
-
-
-  h2 {
-    font-size: 2rem;
-    color: #ffffff;
-    /* Set the heading color to white */
-    margin-top: 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 15px;
-    background-color: rgb(9, 52, 69);
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    position: relative;
-    right: 10px;
-    bottom: 10px;
-  }
-
-  .cbtnn1,
-  .cbtnn2,
-  .cbtnn3 {
-    display: block;
-    width: 90%;
-    padding: 8px 12px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    background-color: rgb(9, 52, 69);
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    position: relative;
-    top: 20px;
-  }
-
-  .cbtnn1:hover,
-  .cbtnn2:hover,
-  .cbtnn3:hover {
-    background-color: rgb(19, 82, 107);
-  }
-
-  .card:hover {
-    box-shadow: 0 8px 16px 0 grey;
-    transform: translate3D(0, -1px, 0) scale(1.03);
-  }
-
-  .card {
-    height: 210px;
-    position: relative;
-    top: 50px;
-    width: 150px;
-    background: white;
-    left: 60px;
-  }
-
-  .card-title {
-    position: relative;
-    top: 10px;
-    left: 10px;
-    font-size: 18px;
-  }
-
-  .card-text {
-    position: relative;
-    left: 10px;
-    font-size: 17px;
-  }
-
-  .cbtnn2,
-  .cbtnn3 {
-    margin-top: 10px;
-  }
-
-
-  /* Responsive styles for small devices */
-  @media (max-width: 768px) {
-    .col-md-3 {
-      flex-basis: 48%;
-    }
-  }
-</style>
 
 <body>
 
@@ -210,11 +66,14 @@
               ?>
 
               <div class="col-md-3 mt-3">
-                <div class="card">
+                <div class="card cardsearch">
 
                   <div class="card-body">
                     <h5 class="card-title" id="rname">
                       <?php echo $row['doctorname']; ?>
+                    </h5>
+                    <h5 class="card-text" id="rlocation">Email:
+                      <?php echo $row['doctoremail']; ?>
                     </h5>
                     <p class="card-text" id="rname">
                       <?php echo $row['doctorlocation']; ?>
