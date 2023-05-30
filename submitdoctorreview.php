@@ -34,6 +34,8 @@ if (!empty($review)){
                 if(mysqli_query($db, $INSERT))
                 {
                     echo '<script>alert("Review Successful!")</script>';
+                    header("Location: showreview.php?docid=$sno");
+                    exit;
                 }
                 else {
                     echo '<script>alert("Error while submitting review! Please try again!")</script>';
