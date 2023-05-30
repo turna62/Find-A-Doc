@@ -96,6 +96,7 @@ h1 {
     background-image: linear-gradient(rgb(50, 146, 184), rgb(9, 52, 69));
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {

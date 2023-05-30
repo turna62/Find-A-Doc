@@ -90,27 +90,7 @@ $email = $_SESSION['doctoremail'];
       </tbody>
     </table>
   </div>
-  <!--<div class="info">
-        <label id="institution" style="font-weight:bold;">Patient Name</label> <label
-          style="margin-left:9px; margin-right:4px; font-weight:bold;">:</label> <label>
-          <?php echo $patientinfo['pname']; ?>
-        </label><br>
-        <label id="institution" style="font-weight:bold;">Appointment Date</label> <label
-          style="margin-left:9px; margin-right:4px; font-weight:bold;">:</label> <label>
-          <?php echo $patientinfo['date']; ?>
-        </label><br>
-        <label id="availability" style="font-weight:bold;">Appointment Time</label> <label
-          style="margin-left:5px; margin-right:4px; font-weight:bold;">:</label> <label>
-          <?php echo $patientinfo['time']; ?>
-        </label><br>
 
-        <div class="inputfield">
-
-          <form action="processrequest.php?email=<?php echo $requester; ?>" method="post">
-            <input type="submit" value="Accept" class="btn" name="accept">
-            <input type="submit" value="Reject" class="btn" name="reject">
-          </form>
-        </div>-->
   <?php
 
 

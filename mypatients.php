@@ -1,69 +1,81 @@
 <?php
 
-  $sname= "localhost";
-  $uname= "root";
-  $password = "";
-  
-  $db_name = "findadoc";
-  
-  $conn = mysqli_connect($sname, $uname, $password, $db_name);
+$sname = "localhost";
+$uname = "root";
+$password = "";
 
-  session_start();
-  $demail = $_SESSION['doctoremail'];
+$db_name = "findadoc";
 
-  if (!$conn) {
-    echo "Connection failed!";
-  }
-  else
-  {
-    $queryfirst = "SELECT * FROM requests WHERE tomail = '$demail' AND status = 'a'";
-   // $querysecond = "SELECT * FROM requests WHERE frommail = '$email' AND status = 'a'";
-    $resultfirst = mysqli_query($conn, $queryfirst);
-   // $resultsecond = mysqli_query($conn, $querysecond);
-  }
+$conn = mysqli_connect($sname, $uname, $password, $db_name);
+
+session_start();
+$demail = $_SESSION['doctoremail'];
+
+if (!$conn) {
+  echo "Connection failed!";
+} else {
+  $queryfirst = "SELECT * FROM requests WHERE tomail = '$demail' AND status = 'a'";
+  // $querysecond = "SELECT * FROM requests WHERE frommail = '$email' AND status = 'a'";
+  $resultfirst = mysqli_query($conn, $queryfirst);
+  // $resultsecond = mysqli_query($conn, $querysecond);
+}
 
 ?>
 
 <html>
-  <head>
-      <title>
-  
-      </title>
-      <link rel = "stylesheet" href = "dashboardtutor.css">
-  </head>
-  <body>
-    
-   
-           
 
-        <div class = "wrapper">
-        <div class = "title">
-            <h1>My patients</h1>
-       </div>
-      <div class="content">
+<head>
+  <title>
+
+  </title>
+  <link rel="stylesheet" href="dashboardtutor.css">
+  <link rel="stylesheet" href="mypatients.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>My Patients</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Patient name</th>
+          <th>Appointment Date</th>
+          <th>Appointment time</th>
+
+        </tr>
+      </thead>
+      <tbody>
         <?php
-        if($resultfirst)
-        {
-          while($row = mysqli_fetch_array($resultfirst))
-          {
+        if ($resultfirst) {
+          while ($row = mysqli_fetch_array($resultfirst)) {
             $pmail = $row['frommail'];
             $queryy = "SELECT pname, date, time FROM requests WHERE frommail = '$pmail' and tomail = '$demail' AND status = 'a'";
             $resultt = mysqli_query($conn, $queryy);
             $pinfo1 = mysqli_fetch_array($resultt);
-            
+
             ?>
-            <div class = "info">
-            <label id = "institution" style="font-weight:bold;">Patient Name</label> <label style="margin-left:9px; margin-right:4px; font-weight:bold;">:</label> <label> <?php echo $pinfo1['pname'];?></label><br>
-                  <label id = "institution" style="font-weight:bold;">Appointment Date</label> <label style="margin-left:9px; margin-right:4px; font-weight:bold;">:</label> <label> <?php echo $pinfo1['date'];?></label><br>
-                  <label id = "availability" style="font-weight:bold;">Appointment Time</label> <label style="margin-left:5px; margin-right:4px; font-weight:bold;">:</label> <label><?php echo $pinfo1['time'];?></label><br>
-          </div>
+            <tr>
+              <td>
+                <?php echo $pinfo1['pname']; ?>
+              </td>
+              <td>
+                <?php echo $pinfo1['date']; ?>
+              </td>
+              <td>
+                <?php echo $pinfo1['time']; ?>
+              </td>
+
+            </tr>
             <?php
           }
         }
         ?>
-       
 
+      </tbody>
+    </table>
+  </div>
 
-  </body>
+</body>
 
 </html>
