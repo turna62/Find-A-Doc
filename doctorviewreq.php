@@ -26,69 +26,67 @@ $email = $_SESSION['doctoremail'];
 </head>
 
 <body>
+
   <?php
   $query = "SELECT * FROM requests WHERE tomail = '$email' AND status = 'p'";
   $result = mysqli_query($conn, $query);
+  ?>
+  <h1>My Requests</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Patient name</th>
+        <th>Email</th>
+        <th>Appointment Date</th>
+        <th>Appointment time</th>
+        <th>Actions</th>
 
-  while ($row = mysqli_fetch_array($result)) {
-    $requester = $row['frommail'];
-    //echo $requester;
-  
-    $query2 = "SELECT pname, date, time FROM requests WHERE frommail = '$requester' and tomail = '$email' AND status = 'p' ";
-    $result2 = mysqli_query($conn, $query2);
+      </tr>
+    </thead>
+    <tbody>
+      <?php
 
-    if (!$result2) {
-      // Handle the error
-      echo "Error: " . mysqli_error($conn);
-    } else {
-      $patientinfo = mysqli_fetch_array($result2);
-      ?>
+      while ($row = mysqli_fetch_array($result)) {
+        $requester = $row['frommail'];
+        //echo $requester;
+      
+        $query2 = "SELECT pname, date, time FROM requests WHERE frommail = '$requester' and tomail = '$email' AND status = 'p' ";
+        $result2 = mysqli_query($conn, $query2);
 
-      <h1>My Requests</h1>
-      <table>
-        <thead>
+        if (!$result2) {
+          // Handle the error
+          echo "Error: " . mysqli_error($conn);
+        } else {
+          $patientinfo = mysqli_fetch_array($result2);
+          ?>
           <tr>
-            <th>Patient name</th>
-            <th>Email</th>
-            <th>Appointment Date</th>
-            <th>Appointment time</th>
-            <th>Actions</th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td> <label id="institution" style="font-weight:bold;"></label> <label
-                style="margin-left:9px; margin-right:4px; font-weight:bold;"></label> <label>
-                <?php echo $patientinfo['pname']; ?>
-              </label></td>
-            <td class="amount">
-              <label id="institution" style="font-weight:bold;"></label> <label
-                style="margin-left:9px; margin-right:4px; font-weight:bold;"></label> <label>
-                <?php echo $requester; ?>
-              </label>
-            </td>
-            <td> <label id="institution" style="font-weight:bold;"></label> <label
-                style="margin-left:9px; margin-right:4px; font-weight:bold;"></label> <label>
-                <?php echo $patientinfo['date']; ?>
-              </label></td>
-            <td><label id="availability" style="font-weight:bold;"></label> <label
-                style="margin-left:5px; margin-right:4px; font-weight:bold;"></label> <label>
-                <?php echo $patientinfo['time']; ?>
-              </label><br></td>
             <td>
-              <form action="processrequest.php?email=<?php echo $requester; ?>" method="post">
-                <input type="submit" value="Accept" class="btn" name="accept">
-                <input type="submit" value="Reject" class="btn" name="reject">
+              <?php echo $patientinfo['pname']; ?>
+            </td>
+            <td class="amount">
+              <?php echo $requester; ?>
+            </td>
+            <td>
+              <?php echo $patientinfo['date']; ?>
+            </td>
+            <td>
+              <?php echo $patientinfo['time']; ?>
+            </td>
+            <td>
+              <form action="processrequest.php?email=<?php echo $requester; ?>" method="post" class="action-buttons">
+                <button type="submit" class="btn accept">Accept</button>
+                <button type="submit" class="btn reject">Reject</button>
               </form>
             </td>
 
           </tr>
-
-        </tbody>
-      </table>
-
-      <!--<div class="info">
+          <?php
+        }
+      }
+      ?>
+    </tbody>
+  </table>
+  <!--<div class="info">
         <label id="institution" style="font-weight:bold;">Patient Name</label> <label
           style="margin-left:9px; margin-right:4px; font-weight:bold;">:</label> <label>
           <?php echo $patientinfo['pname']; ?>
@@ -109,12 +107,12 @@ $email = $_SESSION['doctoremail'];
             <input type="submit" value="Reject" class="btn" name="reject">
           </form>
         </div>-->
-      <?php
-    }
-  }
+  <?php
+
+
   ?>
-  </div>
-  </div>
+
+
 </body>
 
 </html>
