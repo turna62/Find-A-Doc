@@ -18,6 +18,14 @@ if (mysqli_connect_error()) {
   die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
 }
 
+if ($tomail == $frommail) {
+    ?>
+    <script>alert("You cannot request an appointment with yourself!")</script>
+    <?php
+    exit();
+}
+
+
 // Check if the appointment already exists and is accepted
 $checkQuery = "SELECT * FROM requests WHERE tomail = '$tomail' AND date = '$date' AND time = '$time' AND status = 'Accepted'";
 $checkResult = mysqli_query($conn, $checkQuery);
