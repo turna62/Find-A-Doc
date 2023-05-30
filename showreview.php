@@ -30,158 +30,103 @@ session_start();
 </head>
 
 <style>
+    /* Reset styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-@import url("https://fonts.googleapis.com/css??family=Poppins:wght@400;500;600;700&display=swap");
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: rgb(131, 208, 239);
+        overflow-x: hidden;
+    }
 
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Times New Roman', Times, serif;
+    .credentials{
+        position: relative;
+        left: 40px;
+        top: 30px;
+        color: #093445;
+    }
 
-    box-sizing: border-box;
+    /* Container styles */
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Testimonial section styles */
+    #testimonials {
+        text-align: center;
+    }
+
+    .testimonial-heading h1 {
+        font-size: 32px;
+        font-weight: 600;
+        color: #093445;
+        margin-bottom: 30px;
+    }
+
+    .testimonial-box-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .testimonial-box {
+        width: 100vh;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        transition: transform 0.3s ease;
+    }
+
+    .testimonial-box:hover {
+        transform: translateY(-5px);
+    }
+
+    .testimonial-box .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
     
-}
-body{
-    background-color: rgb(131, 208, 239);
-    overflow-x: hidden;
-}
-a{
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-}
-#testimonials{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-}
-.testimonial-heading h1{
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: rgb(9, 52, 69);
-    padding: 10px 20px;
-    position: relative;
-    right: 60px;
-    top: 60px;
-}
-.testimonial-box-container{
-    position: relative;
-    top: 60px;
-}
-.testimonial-box{
-    
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-    width: 850px;
-    height: 150px;
-    cursor: pointer;
-    background-color: rgb(181, 228, 247);
-    position: relative;
-    border-radius: 10px;
-}
-.name-user strong{
-    color: #3d3d3d;
-    font-size: 1.3rem;
-    letter-spacing: 0.5px;
-    position: relative;
-    left: 10px;
-}
-.name-user span{
-    color: #979797;
-    font-size: 0.8rem;
-}
-.reviews{
-    color: #f9d71c;
-}
-.box-top{
-    position: relative;
-   top: 20px;
-    left: 20px;
-}
-.client-comment p{
-    font-size: 1.1rem;
-    color: #4b4b4b;
-    position: relative;
-    left: 30px;
-    top: 25px;
-}
-.client-commenttime p{
-    font-size: 0.9rem;
-    color: #4b4b4b;
-    position: relative;
-    left: 680px;
-    top: 67px;
-}
+    .testimonial-box .profile .name-user {
+        font-size: 18px;
+        font-weight: 500;
+        color: #093445;
+    }
 
-.reviews p{
-    font-size: 1.1rem;
-    color: #4b4b4b;
-    position: relative;
-    left: 430px;
-    top: 80px;
-}
-.reviews i{
-    color: rgba(248, 197, 70, 0.964);
-}
+    .testimonial-box .client-comment p {
+        font-size: 16px;
+        color: #4b4b4b;
+        margin-bottom: 15px;
+    }
 
-.reviews{
-    position: relative;
-    bottom: 145px;
-    left: 250px;
-}
+    .testimonial-box .client-comment .review-date {
+        font-size: 14px;
+        color: #888888;
+    }
 
+    /* Total review count styles */
+    .totalreview {
+        font-size: 24px;
+        font-weight: 600;
+        color: #093445;
+        text-align: center;
+        position: relative;
+        bottom: 20px;
+    }
 
-.testimonial-box:hover{
-    transform: translateY(-10px);
-    transition: all ease 0.3s;
-}
- 
-.totalrate{
-font-weight: 700;
-font-size: 22px;
-color: rgb(80, 31, 19);
-font-family: 'Times New Roman', Times, serif;
-position: relative;
-right: 483px;
-bottom: 120px;
-}
- 
-.totalreview{
-font-weight: 700;
-font-size: 22px;
-color: rgb(9, 52, 69);
-font-family: 'Times New Roman', Times, serif;
-position: relative;
-right:500px;
-}
-
-.totalrate i{
-    color: rgba(248, 174, 70, 0.964);
-}
-.credentials{
-color: rgb(9, 52, 69);
-font-family: 'Times New Roman', Times, serif;
-position: relative;
-font-size: 25px;
-left: 430px;
-top: 50px;
-}
-
-.credentials .restlocation{
-    position: relative;
-    left: 35px;
-}
-u{
-    position: relative;
-    left: 50px;
-}
-.credentials .restname{
-    position: relative;
-    left: 23px;
-    top: 100px;
-}
-
-
+    .totalreview span {
+        color: #f8ae46;
+    }
 </style>
 
 <body>

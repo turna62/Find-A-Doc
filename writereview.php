@@ -37,7 +37,7 @@ html,body{
   flex-direction: column;
   position: relative;
   height: 300px;
-  bottom: 100px;
+  bottom: 80px;
 }
 .container .post{
   display: none;
