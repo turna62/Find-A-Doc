@@ -37,7 +37,7 @@ session_start();
             $row_cnt = mysqli_num_rows($query_run);
 
 
-            echo "<div class='alert alert-success mt-3 text-center' role='alert'>$row_cnt doctor(s) found! </div>";
+            echo "<div class='alert alert-success mt-3 text-center' role='alert' style='color:white'>$row_cnt doctor(s) found! </div>";
             while ($row = mysqli_fetch_assoc($query_run)) {
               ?>
               <?php
