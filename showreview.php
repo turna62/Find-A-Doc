@@ -10,7 +10,7 @@ session_start();
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, intial-scale=1.0">
-<title></title>
+<title>RRF Doctor Reviews</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -172,13 +172,13 @@ session_start();
     require 'dbConfig.php';
     $sno = $_GET['docid'];
     
-    $getr= "SELECT COUNT(*) AS total_reviews FROM reviews WHERE reviewid ='$sno'";
+    $getr= "SELECT COUNT(*) AS total_reviews FROM reviews WHERE rdoctorid ='$sno'";
     $result = mysqli_query($db, $getr);
 
     $row = mysqli_fetch_array($result);
 
    
-$showr = "SELECT review, rpatientname  FROM reviews WHERE reviewid = '$sno' ";
+$showr = "SELECT review, rpatientname  FROM reviews WHERE rdoctorid = '$sno' ";
 $result = mysqli_query($db, $showr);
 
 ?>
