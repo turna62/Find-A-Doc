@@ -113,8 +113,8 @@ body {
   display: block;
   width: 90%;
   padding: 8px 12px;
-  margin-bottom: 10px;
-  border: none;
+  margin-bottom: 5px;
+  border: none; 
   border-radius: 4px;
   text-align: center;
   text-decoration: none;
@@ -136,7 +136,7 @@ body {
 
 .cbtnn2,
 .cbtnn3 {
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 
