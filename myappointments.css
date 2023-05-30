@@ -1,0 +1,128 @@
+/* color variables */
+/* border radius */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: #4f546c;
+    font-size: 0.9rem;
+    background-color: rgb(50, 146, 184);
+    padding-top: 90px;
+    /* Increase the top padding to move the content lower */
+}
+
+table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e1e5ee;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+    margin-top: 70px;
+    margin-right: 20px;
+    /* Increase the margin-top to move the table lower */
+}
+
+/* Rest of the CSS code remains the same */
+
+table thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+table th {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    /* Change the font family to your preferred font */
+    color: #333333;
+    /* Set the font color */
+}
+
+@media screen and (max-width: 768px) {
+    table th {
+        font-size: 0.8rem;
+    }
+}
+
+table td {
+    padding: 1rem 2rem;
+    font-family: Arial, sans-serif;
+    /* Change the font family to your preferred font */
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #333333;
+    /* Set the font color */
+}
+
+@media screen and (max-width: 768px) {
+    table td {
+        font-size: 0.8rem;
+    }
+}
+
+
+table .amount {
+    text-align: right;
+}
+
+table tr:nth-child(even) {
+    background-color: #b3d1e3;
+}
+
+
+
+h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    /* Set the heading color to white */
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgb(9, 52, 69);
+    background-image: linear-gradient(rgb(50, 146, 184), rgb(9, 52, 69));
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+
+.container {
+    position: relative;
+}
+
+.container h1 {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+table tr {
+    transition: transform 0.4s ease;
+    /* Add transition effect */
+}
+
+table tr:hover {
+    transform: translateX(5px);
+    /* Move the row horizontally when hovered */
+}
