@@ -22,6 +22,11 @@ body {
     bottom: 10px;
   }
   
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .wholefix {
     display: flex;
     justify-content: center;
@@ -48,11 +53,6 @@ body {
     
   }
   
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
   
   .col-md-3 {
     flex-basis: 23%;
@@ -66,8 +66,10 @@ body {
     transition: box-shadow 0.3s ease-in-out;
     background-color: #fff;
     position: relative;
-    right: 800px;
+    right: 130px;
     top: 50px;
+    box-shadow: 0 5px 10px #97999cba;
+    margin-right: 20px; /* Add margin to create space between cards */
   }
   
   
@@ -78,8 +80,10 @@ body {
     transition: box-shadow 0.3s ease-in-out;
     background-color: #fff;
     position: relative;
-    right: 700px;
     top: 50px;
+    right: 230px;
+    margin-right: 20px; /* Add margin to create space between cards */
+    box-shadow: 0 5px 10px #97999cba;
   }
   
   .card:hover {

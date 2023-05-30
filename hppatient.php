@@ -32,8 +32,8 @@ body{
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
     position: relative;
-    left: 30px ;
-    
+    left: 230px;
+      
 }
 
 .search-box input[type="text"]{
@@ -51,25 +51,9 @@ body{
     width: 520px;
     color: #fff;
     position: relative;
-    left: 100px;
     top: 30px;
     border: 2px solid rgb(50, 146, 184);
-}
-
-
-
-.search-btn {
-    position: relative;
-    left: 610px;
-    bottom: 50px;
-    height: 50px;
-    width: 70px;
-    color: rgb(80, 31, 19) ;
-    border-radius: 4px;
-}
-
-.search-btn:hover {
-    color:  rgb(9, 52, 69);
+    left: 100px;
 }
 
 .btnn {
@@ -79,7 +63,7 @@ body{
   cursor: pointer;
   color:  rgb(9, 52, 69);
   position: relative;
-  left: 35px;
+  left: 335px;
   top: 45px;
   border-radius: 10px;
 }
@@ -90,35 +74,55 @@ body{
   color: white;
 }
 
-.bttnn {
-  border: none;
-  outline: none;
-  padding: 8px 8px;
-  cursor: pointer;
-  color:  rgb(9, 52, 69);
-  position: relative;
-  left: 1000px;
-  border-radius: 10px;
-}
-
-
-.bttnn:hover {
-  background-color:  rgb(9, 52, 69) ;
-  color: white;
-}
-
-
 .btnn.show {
   background-color: #666;
   color: white;
 }
+    /* Button styles */
+   
+    .sidenav {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(9, 52, 69);
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
-#search_result{
-    position: relative;
-    top: 30px;
-    background-color: rgb(231, 234, 239);
-    width: 600px;
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 21px;
+  color: white;
+  display: block;
+}
 
+/* Styles for search results */
+#search_result {
+  position: relative;
+  top: 25px;
+  left: 230px;
+  z-index: 999;
+  display: none;
+  width: 520px; /* Adjust the width as needed */
+  background-color: #fff;
+  border: 2px solid rgb(50, 146, 184);
+  padding: 10px;
+  box-sizing: border-box;
+  color: black;
+  margin-top: 5px;
+}
+
+#search_result .result-item {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+#search_result .result-item:last-child {
+  border-bottom: none;
 }
 
 </style>
@@ -128,8 +132,11 @@ body{
 
 <body>
 
-    
-        
+<div class="sidenav">
+  <a href="patientprofile.php"><i class="fas fa-user"></i> My Profile</a>
+  <a href="myappointments.php"><i class="fa fa-stethoscope"></i> My Appoinments</a>
+  <a href="patientviewreq.php"><i class="fa fa-medkit"></i> My Requests</a>
+</div>
         
             <div class="search">
               <div class="search-box"> 
@@ -139,7 +146,7 @@ body{
                     </div>
               </div>
         
-         <div id="search_result"></div>
+         <div id="search_result" class="search_result"></div>
          
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -177,14 +184,10 @@ body{
         
     </script>
 
-<button class="bttnn" onclick="window.location.href='patientprofile.php';">My Profile <i class='fas fa-user-circle'></i></button>
-<button class="bttnn" onclick="window.location.href='myappointments.php';">My Appointments <i class='fas fa-user-circle'></i></button>
-<button class="bttnn" onclick="window.location.href='patientviewreq.php';">My Requests <i class='fas fa-user-circle'></i></button>
         <button class="btnn show" onclick="window.location.href='showall.php';"> Show All</button>
         <button class="btnn" onclick="window.location.href='checklocation.php';"> Location</button>
         <button class="btnn" onclick="window.location.href='checkcategory.php';"> Category</button>
-       
-        
+     
     </div>
 
   

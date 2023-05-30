@@ -5,12 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap CSS -->
 
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
 
   <title>Search Doctors</title>
@@ -24,87 +22,102 @@
     overflow-x: hidden;
   }
 
-
-
-  .cbtnn1 {
-    border: none;
-    outline: none;
-    padding: 4px 4px;
-    cursor: pointer;
-    color: white;
-    position: relative;
-    text-decoration: none;
-    top: 0px;
-    border-radius: 5px;
-    background-color: rgb(9, 52, 69);
-    left: 10px;
-  }
-
-
-  .cbtnn1:hover {
-    opacity: 0.7;
-    text-decoration: none;
-  }
-
-  .cbtnn2 {
-    border: none;
-    outline: none;
-    padding: 4px 4px;
-    cursor: pointer;
-    color: white;
-    position: relative;
-    text-decoration: none;
-    top: 20px;
-    border-radius: 5px;
-    background-color: rgb(9, 52, 69);
-    left: 10px;
-  }
-
-
-  .cbtnn2:hover {
-    opacity: 0.7;
-    text-decoration: none;
-  }
-
-  .cbtnn3 {
-    border: none;
-    outline: none;
-    padding: 4px 8px;
-    cursor: pointer;
-    color: white;
-    position: relative;
-    text-decoration: none;
-    top: 10px;
-    border-radius: 5px;
-    background-color: rgb(9, 52, 69);
-    left: 10px;
-  }
-
-
-  .cbtnn3:hover {
-    opacity: 0.7;
-    text-decoration: none;
-  }
-
-  .cardbtn a {
-
-    border: none;
-    outline: none;
-    padding: 8px 8px;
-    cursor: pointer;
-    color: rgb(80, 31, 19);
-
-  }
-
-  .cardbtn a:hover {
-    opacity: 0.7;
+  .wholefix {
+    display: flex;
+    justify-content: center;
   }
 
   .cardfix {
-    position: relative;
-    left: 200px;
     width: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .col-md-3 {
+    flex-basis: 23%;
+    margin-bottom: 30px;
+  }
+
+  .card {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #fff;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    width: 25%;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px) scale(1.03);
+  }
+
+  .card-body {
+    padding: 20px;
+    position: relative;
+    bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #141414;
+  }
+
+  .card-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555;
+  }
+
+
+  h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    /* Set the heading color to white */
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px;
+    background-color: rgb(9, 52, 69);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    position: relative;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .cbtnn1,
+  .cbtnn2,
+  .cbtnn3 {
+    display: block;
+    width: 90%;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(9, 52, 69);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+    top: 20px;
+  }
+
+  .cbtnn1:hover,
+  .cbtnn2:hover,
+  .cbtnn3:hover {
+    background-color: rgb(19, 82, 107);
   }
 
   .card:hover {
@@ -134,56 +147,17 @@
     font-size: 17px;
   }
 
-  .heading {
-    position: relative;
-    left: 200px;
-    top: 80px;
-    font-size: 25px;
-    color: rgb(80, 31, 19);
-    font-family: 'Times New Roman', Times, serif;
+  .cbtnn2,
+  .cbtnn3 {
+    margin-top: 10px;
   }
 
 
-  .card-body .card-text2 i {
-    color: rgba(248, 197, 70, 0.964);
-  }
-
-  .card-body .card-texti i {
-    color: rgba(248, 197, 70, 0.964);
-  }
-
-  .card .card-body .card-textrn {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-    color: rgb(80, 31, 19);
-    font-weight: 600;
-    bottom: 20px;
-  }
-
-  .card .card-body .card-text1 i {
-    bottom: 50px;
-  }
-
-  .alert {
-    position: relative;
-    top: 40px;
-    right: 10px;
-  }
-
-  .rrflogo {
-    height: 80px;
-
-  }
-
-  .alert {
-    font-size: 18px;
-  }
-
-  h2 {
-    color: white;
-    position: relative;
-    top: 20px;
-    left: 40px;
+  /* Responsive styles for small devices */
+  @media (max-width: 768px) {
+    .col-md-3 {
+      flex-basis: 48%;
+    }
   }
 </style>
 
@@ -213,8 +187,8 @@
 
 
 
-    <div class="cardifix">
-      <div class="container py-5">
+    <div class="cardfix">
+      <div class="container py-2">
         <div class="row mt-3">
           <?php
           require 'dbConfig.php';
