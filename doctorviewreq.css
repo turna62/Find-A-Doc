@@ -85,7 +85,7 @@ table tr:nth-child(even) {
     justify-content: space-between;
 }
 
-.action-buttons button {
+.action-buttons .button {
     padding: 8px 12px;
     font-size: 0.8rem;
     border: none;
@@ -93,14 +93,14 @@ table tr:nth-child(even) {
     cursor: pointer;
 }
 
-.action-buttons button.accept {
+.action-buttons .button.accept {
     background-color: #81c784;
     color: #fff;
     margin-right: 10px;
     /* Add margin-right for spacing */
 }
 
-.action-buttons button.reject {
+.action-buttons .button.reject {
     background-color: #e57373;
     color: #fff;
 }
