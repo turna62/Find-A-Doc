@@ -23,14 +23,12 @@ html,body{
   height: 100%;
   place-items: center;
   text-align: center;
-  background:  rgb(9, 52, 69);
+  background: rgb(50, 146, 184);
 }
 .container{
   width: 400px;
   background: white;
   padding: 20px 30px;
-  border: 1px solid rgb(9, 52, 69);
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +36,7 @@ html,body{
   position: relative;
   height: 300px;
   bottom: 80px;
+  box-shadow: 0 5px 5px #fff;
 }
 .container .post{
   display: none;
@@ -129,7 +128,7 @@ form .btn button:hover{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .credentials {
-  color: white;
+  color: rgb(9, 52, 69);
   position: relative;
   bottom: 10px;
 }
