@@ -53,6 +53,9 @@ session_start();
                     <h5 class="card-title" id="rname">Doctor:
                       <?php echo $row['doctorname']; ?>
                     </h5>
+                    <h5 class="card-text" id="rlocation">Email:
+                      <?php echo $row['doctoremail']; ?>
+                    </h5>
                     <h5 class="card-text" id="rlocation">Location:
                       <?php echo $row['doctorlocation']; ?>
                     </h5>
