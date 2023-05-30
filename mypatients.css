@@ -59,11 +59,17 @@ table th {
 table td {
     padding: 1rem 2rem;
     font-family: Arial, sans-serif;
-    /* Change the font family to your preferred font */
     font-size: 0.9rem;
     font-weight: 400;
     color: #333333;
-    /* Set the font color */
+    text-align: center;
+    border: 1px solid #dcdbdb;
+}
+
+table tr:hover {
+    background-color: #c9dde8;
+    color: #ffffff;
+
 }
 
 @media screen and (max-width: 768px) {
