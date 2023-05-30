@@ -17,7 +17,7 @@ if (!$conn) {
 
 if(isset($_POST['accept']))
 {
-  $update = "UPDATE requests SET status = 'Accepted' WHERE frommail = '$pmail' AND tomail = '$doctormail'";
+  $update = "UPDATE requests SET status = 'Accepted', dstatus = 'Scheduled' WHERE frommail = '$pmail' AND tomail = '$doctormail'";
   $accepted = mysqli_query($conn, $update);
 
    

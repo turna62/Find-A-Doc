@@ -118,7 +118,7 @@
         {
           // echo `Email gese`; //
           ?>      
-          <script>alert("email gese!")</script>
+          <script>alert("Email sent successfully! Kindly check your email to verify your account!")</script>
           <?php
           exit();
         }

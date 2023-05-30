@@ -8,6 +8,7 @@ $db_name = "findadoc";
 
 $conn = mysqli_connect($sname, $uname, $password, $db_name);
 
+
 session_start();
 $demail = $_SESSION['doctoremail'];
 
@@ -41,8 +42,8 @@ if (!$conn) {
         <tr>
           <th>Patient name</th>
           <th>Appointment Date</th>
-          <th>Appointment time</th>
-
+          <th>Appointment Time</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -50,7 +51,7 @@ if (!$conn) {
         if ($resultfirst) {
           while ($row = mysqli_fetch_array($resultfirst)) {
             $pmail = $row['frommail'];
-            $queryy = "SELECT pname, date, time FROM requests WHERE frommail = '$pmail' and tomail = '$demail' AND status = 'Accepted'";
+            $queryy = "SELECT pname, date, time, dstatus, requestId FROM requests WHERE frommail = '$pmail' and tomail = '$demail' AND status = 'Accepted'";
             $resultt = mysqli_query($conn, $queryy);
             $pinfo1 = mysqli_fetch_array($resultt);
 
@@ -65,6 +66,21 @@ if (!$conn) {
               <td>
                 <?php echo $pinfo1['time']; ?>
               </td>
+              
+              <td>
+             <?php if ($pinfo1['dstatus'] === 'Scheduled') : ?>
+             <form action="markasdone.php" method="POST">
+             <input type="hidden" name="requestId" value="<?php echo $pinfo1['requestId']; ?>">
+             <!-- <?php echo $pinfo1['requestId']; ?>  -->
+             <button type="submit" class="mark-as-done-button">Mark as Done</button>
+             </form>
+             <?php elseif ($pinfo1['dstatus'] === 'Done') : ?>
+             <span class="status-done">Done</span>
+             <?php endif; ?>
+</td>
+
+
+
 
             </tr>
             <?php
