@@ -146,3 +146,10 @@ table tr:hover {
   .mark-as-done-button:hover {
     background-color: #23527c;
   }
+
+  .appointment-count {
+    font-weight: bold;
+    color:black;
+    margin-top: 50px;
+  }
+  
