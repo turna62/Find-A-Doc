@@ -14,7 +14,7 @@ $demail = $_SESSION['doctoremail'];
 if (!$conn) {
   echo "Connection failed!";
 } else {
-  $queryfirst = "SELECT * FROM requests WHERE tomail = '$demail' AND status = 'a'";
+  $queryfirst = "SELECT * FROM requests WHERE tomail = '$demail' AND status = 'Accepted'";
   // $querysecond = "SELECT * FROM requests WHERE frommail = '$email' AND status = 'a'";
   $resultfirst = mysqli_query($conn, $queryfirst);
   // $resultsecond = mysqli_query($conn, $querysecond);
@@ -50,7 +50,7 @@ if (!$conn) {
         if ($resultfirst) {
           while ($row = mysqli_fetch_array($resultfirst)) {
             $pmail = $row['frommail'];
-            $queryy = "SELECT pname, date, time FROM requests WHERE frommail = '$pmail' and tomail = '$demail' AND status = 'a'";
+            $queryy = "SELECT pname, date, time FROM requests WHERE frommail = '$pmail' and tomail = '$demail' AND status = 'Accepted'";
             $resultt = mysqli_query($conn, $queryy);
             $pinfo1 = mysqli_fetch_array($resultt);
 

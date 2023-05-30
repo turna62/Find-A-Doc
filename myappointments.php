@@ -29,7 +29,7 @@ $name = $_SESSION['patientname'];
 <body>
 
   <?php
-  $query = "SELECT * FROM requests WHERE pname = '$name'and frommail = '$email' AND status = 'a'";
+  $query = "SELECT * FROM requests WHERE pname = '$name'and frommail = '$email' AND status = 'Accepted'";
   $result = mysqli_query($conn, $query);
 
   ?>
@@ -51,7 +51,7 @@ $name = $_SESSION['patientname'];
           $requester = $row['tomail'];
           //echo $requester;
         
-          $query2 = "SELECT pname, date, time, tomail FROM requests WHERE tomail = '$requester' and frommail = '$email' AND status = 'a' ";
+          $query2 = "SELECT pname, date, time, tomail FROM requests WHERE tomail = '$requester' and frommail = '$email' AND status = 'Accepted' ";
           $result2 = mysqli_query($conn, $query2);
 
           if (!$result2) {

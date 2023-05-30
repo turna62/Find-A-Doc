@@ -17,7 +17,7 @@ if (!$conn) {
 
 if(isset($_POST['accept']))
 {
-  $update = "UPDATE requests SET status = 'a' WHERE frommail = '$pmail' AND tomail = '$doctormail'";
+  $update = "UPDATE requests SET status = 'Accepted' WHERE frommail = '$pmail' AND tomail = '$doctormail'";
   $accepted = mysqli_query($conn, $update);
 
    
@@ -27,7 +27,7 @@ if(isset($_POST['accept']))
 
 if(isset($_POST['reject']))
 {
-  $update = "UPDATE requests SET status = 'r' WHERE frommail = '$pmail' AND tomail = '$doctormail'";
+  $update = "UPDATE requests SET status = 'Rejected' WHERE frommail = '$pmail' AND tomail = '$doctormail'";
   $rejected = mysqli_query($conn, $update);
 
   header("Location: doctorviewreq.php");

@@ -32,7 +32,7 @@ $name = $_SESSION['patientname'];
 
 
   <?php
-  $query = "SELECT * FROM requests WHERE pname = '$name'and frommail = '$email' AND status = 'p'";
+  $query = "SELECT * FROM requests WHERE pname = '$name'and frommail = '$email'";
   $result = mysqli_query($conn, $query);
   ?>
   <div class="container">
@@ -40,10 +40,10 @@ $name = $_SESSION['patientname'];
     <table>
       <thead>
         <tr>
-          <th>Patient name</th>
           <th>Appointment Date</th>
           <th>Appointment time</th>
           <th>Doctor Contact</th>
+          <th>Status</th>
 
         </tr>
       </thead>
@@ -54,7 +54,7 @@ $name = $_SESSION['patientname'];
           $requester = $row['tomail'];
           //echo $requester;
         
-          $query2 = "SELECT pname, date, time, tomail FROM requests WHERE tomail = '$requester' and frommail = '$email' AND status = 'p' ";
+          $query2 = "SELECT pname, date, time, tomail, status FROM requests WHERE tomail = '$requester' and frommail = '$email' ";
           $result2 = mysqli_query($conn, $query2);
 
           if (!$result2) {
@@ -65,9 +65,7 @@ $name = $_SESSION['patientname'];
             ?>
 
             <tr>
-              <td>
-                <?php echo $patientinfo['pname']; ?>
-              </td>
+             
               <td style="text-align: center;">
                 <?php echo $patientinfo['date']; ?>
               </td>
@@ -76,6 +74,12 @@ $name = $_SESSION['patientname'];
               </td>
               <td>
                 <?php echo $patientinfo['tomail']; ?>
+              </td>
+             
+              <td>
+              <span class="status <?php echo $patientinfo['status']; ?>">
+              <?php echo $patientinfo['status']; ?>
+              </span>
               </td>
 
 

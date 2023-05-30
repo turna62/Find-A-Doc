@@ -34,13 +34,14 @@ if(!empty($tomail) && !empty($date) && !empty($time)) {
         exit();
     }
     else {
-        $query = "INSERT INTO requests (frommail, tomail, status, date, time, pname) values ('$frommail', '$tomail', 'p', '$date', '$time', '$pname')";
+        $query = "INSERT INTO requests (frommail, tomail, status, date, time, pname) values ('$frommail', '$tomail', 'Pending', '$date', '$time', '$pname')";
         $result = mysqli_query($conn, $query);
         //$requestId = mysqli_insert_id($conn);
   
         if($result) {
             ?>      
-            <script>alert(" gese!")</script>
+            <script>alert("Request sent successfully!")</script>
+
             <?php
             exit();
         }

@@ -28,7 +28,7 @@ $email = $_SESSION['doctoremail'];
 <body>
 
   <?php
-  $query = "SELECT * FROM requests WHERE tomail = '$email' AND status = 'p'";
+  $query = "SELECT * FROM requests WHERE tomail = '$email' AND status = 'Pending'";
   $result = mysqli_query($conn, $query);
   ?>
   <div class="container">
@@ -51,7 +51,7 @@ $email = $_SESSION['doctoremail'];
           $requester = $row['frommail'];
           //echo $requester;
         
-          $query2 = "SELECT pname, date, time FROM requests WHERE frommail = '$requester' and tomail = '$email' AND status = 'p' ";
+          $query2 = "SELECT pname, date, time FROM requests WHERE frommail = '$requester' and tomail = '$email' AND status = 'Pending' ";
           $result2 = mysqli_query($conn, $query2);
 
           if (!$result2) {

@@ -132,3 +132,26 @@ table tr:hover {
     /* Move the row horizontally when hovered */
 }
 
+
+.status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .Pending {
+    background-color: yellow;
+    color: rgb(23, 74, 94);
+  }
+  
+  .Accepted {
+    background-color: #0d7612;
+    color: rgb(23, 74, 94);
+  }
+  
+  .Rejected {
+    background-color: rgb(181, 10, 10);
+    color: rgb(23, 74, 94);
+  }
+  
