@@ -42,6 +42,7 @@ $name = $_SESSION['patientname'];
           <th>Appointment Date</th>
           <th>Appointment time</th>
           <th>Doctor Contact</th>
+          <th>Status</th>
 
         </tr>
       </thead>
@@ -51,7 +52,7 @@ $name = $_SESSION['patientname'];
           $requester = $row['tomail'];
           //echo $requester;
         
-          $query2 = "SELECT pname, date, time, tomail FROM requests WHERE tomail = '$requester' and frommail = '$email' AND status = 'Accepted' ";
+          $query2 = "SELECT pname, date, time, tomail, dstatus FROM requests WHERE tomail = '$requester' and frommail = '$email' AND status = 'Accepted' ";
           $result2 = mysqli_query($conn, $query2);
 
           if (!$result2) {
@@ -70,6 +71,11 @@ $name = $_SESSION['patientname'];
               </td>
               <td>
                 <?php echo $patientinfo['tomail']; ?>
+              </td>
+              <td>
+              <span class="dstatus <?php echo $patientinfo['dstatus']; ?>">
+              <?php echo $patientinfo['dstatus']; ?>
+              </span>
               </td>
             </tr>
             <?php

@@ -131,3 +131,24 @@ table tr:hover {
     transform: translateX(5px);
     /* Move the row horizontally when hovered */
 }
+
+
+.dstatus {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .Scheduled {
+    background-color: yellow;
+    color: rgb(23, 74, 94);
+  }
+  
+  .Done {
+    background-color: #0d7612;
+    color: rgb(23, 74, 94);
+  }
+  
+
+  
