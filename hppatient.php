@@ -48,7 +48,7 @@ body{
 
 .search-box {
     height: 50px;
-    width: 520px;
+    width: 600px;
     color: #fff;
     position: relative;
     top: 30px;
