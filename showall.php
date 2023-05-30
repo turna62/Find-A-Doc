@@ -7,26 +7,12 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
-<!-- Bootstrap CSS -->
-
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-
-
-<link href="card.css" rel="stylesheet">
-
-
+    <!-- Bootstrap CSS -->
+    <link href="card.css" rel="stylesheet">
     <title>All Doctors</title>
-     
-
-
- 
-
 </head>
-
-
 <body>
 
 <h2>Showing all search results...</h2>
@@ -46,7 +32,7 @@ session_start();
 
       
       if (mysqli_num_rows($query_run) > 0) {
-        $row_cnt = $query_run->num_rows;
+        $row_cnt = mysqli_num_rows($query_run);
     
         
         echo "<div class='alert alert-success mt-3 text-center' role='alert'>$row_cnt doctor(s) found! </div>";
@@ -64,7 +50,7 @@ session_start();
           <div class="card-body"> 
             <h5 class="card-title" id="rname">Doctor: <?php echo $row['doctorname']; ?></h5>
             <p class="card-text" id="rlocation"><?php echo $row['doctorlocation']; ?></p>
-            <p class="card-text" id="rlocation"><?php echo $row['doctorcategory']; ?></p>
+            <p class="card-text" id="rcategory"><?php echo $row['doctorcategory']; ?></p>
            
          
             
@@ -87,6 +73,8 @@ session_start();
 
           <?php
         }
+      } else {
+        echo "<div class='alert alert-info mt-3 text-center' role='alert'>No doctors found.</div>";
       }
 
       ?>
@@ -97,5 +85,3 @@ session_start();
  
 </body>
 </html>
-        
-      

@@ -69,7 +69,7 @@ if (!$conn) {
   border-radius: 5px;
   position: relative;
   top: 90px;
-  left: 210px;
+  left: 160px;
   font-size: 15px;
 }
 
@@ -87,7 +87,7 @@ h2{
 
 
       <div class = "banner">
-          <h2>Doctor's Profile</h2>
+          <h2><i class="fa fa-user-md"></i> Doctor's Profile</h2>
         
           <div class = "attribute">
             <label>Name:</label>

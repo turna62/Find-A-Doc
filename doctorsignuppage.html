@@ -177,29 +177,32 @@ bottom: 40px;
 	
     <body>
 		<div class="UserSignUp">
-			<h1>Doctor Sign Up</h1>
+			<h1><i class="fa fa-user-md"></i> Doctor Sign Up</h1>
 			<form action="doctorconnect.php" method="post" autocomplete="on">
 				<label for="username" class="uname">
 					<i class="fas fa-user"></i>
 				</label>
 				<input type="text" name="doctorname" placeholder="Username" id="username" required>
 
+				<label for="email" class="mail">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="doctoremail" placeholder="Email" id="email" required>
+               
+
 				<label for="username" class="uname">
-					<i class="fas fa-user"></i>
+					<i class="fas fa-map"></i>
 				</label>
 				<input type="text" name="doctorlocation" placeholder="Location" id="username" required>
 
+
 				<label for="username" class="uname">
-					<i class="fas fa-user"></i>
+					<i class="fa fa-user-md"></i>
 				</label>
 				<input type="text" name="doctorcategory" placeholder="Specialty" id="username" required>
 
 
 
-                <label for="email" class="mail">
-					<i class="fas fa-envelope"></i>
-				</label>
-				<input type="email" name="doctoremail" placeholder="Email" id="email" required>
                 
 				<label for="password" class="pass">
 					<i class="fas fa-lock"></i>

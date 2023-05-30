@@ -82,7 +82,7 @@ body{
    
     .sidenav {
   height: 100%;
-  width: 200px;
+  width: 220px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -95,10 +95,11 @@ body{
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 21px;
   color: white;
   display: block;
 }
+
 /* Styles for search results */
 #search_result {
   position: relative;
@@ -132,9 +133,9 @@ body{
 <body>
 
 <div class="sidenav">
-  <a href="patientprofile.php">My Profile</a>
-  <a href="myappointments.php">My Appoinments</a>
-  <a href="patientviewreq.php">My Requests</a>
+  <a href="patientprofile.php"><i class="fas fa-user"></i> My Profile</a>
+  <a href="myappointments.php"><i class="fa fa-stethoscope"></i> My Appoinments</a>
+  <a href="patientviewreq.php"><i class="fa fa-medkit"></i> My Requests</a>
 </div>
         
             <div class="search">

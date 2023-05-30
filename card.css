@@ -22,6 +22,11 @@ body {
     bottom: 10px;
   }
   
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .wholefix {
     display: flex;
     justify-content: center;
@@ -46,11 +51,6 @@ body {
     left: 80px;  
   }
   
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
   
   .col-md-3 {
     flex-basis: 23%;
@@ -64,8 +64,10 @@ body {
     transition: box-shadow 0.3s ease-in-out;
     background-color: #fff;
     position: relative;
-    right: 800px;
+    right: 130px;
     top: 50px;
+    margin-right: 20px; /* Add margin to create space between cards */
+
   }
   
   
@@ -76,8 +78,10 @@ body {
     transition: box-shadow 0.3s ease-in-out;
     background-color: #fff;
     position: relative;
-    right: 700px;
     top: 50px;
+    right: 230px;
+    margin-right: 20px; /* Add margin to create space between cards */
+
   }
   
   .card:hover {
@@ -140,11 +144,9 @@ body {
 }
 
 
-  /* Responsive styles for small devices */
-  @media (max-width: 768px) {
-    .col-md-3 {
-      flex-basis: 48%;
-    }
-  }
+.col-md-3 {
+  flex-basis: 23%;
+  margin-bottom: 30px;
+}
   
   
