@@ -64,7 +64,7 @@ $email = $_SESSION['doctoremail'];
               <td>
                 <?php echo $patientinfo['pname']; ?>
               </td>
-              <td class="amount">
+              <td style="text-align: center;">
                 <?php echo $requester; ?>
               </td>
               <td>

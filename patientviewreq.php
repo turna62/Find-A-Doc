@@ -68,7 +68,7 @@ $name = $_SESSION['patientname'];
               <td>
                 <?php echo $patientinfo['pname']; ?>
               </td>
-              <td class="amount">
+              <td style="text-align: center;">
                 <?php echo $patientinfo['date']; ?>
               </td>
               <td>
