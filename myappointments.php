@@ -23,12 +23,10 @@ $name = $_SESSION['patientname'];
 
   </title>
   <link rel="stylesheet">
+  <link rel="stylesheet" href="myappointments.css">
 </head>
 
 <body>
-
-
-
 
   <?php
   $query = "SELECT * FROM requests WHERE pname = '$name'and frommail = '$email' AND status = 'a'";
@@ -64,7 +62,7 @@ $name = $_SESSION['patientname'];
             ?>
             <tr>
 
-              <td class="amount">
+              <td style="text-align: center;">
                 <?php echo $patientinfo['date']; ?>
               </td>
               <td>
