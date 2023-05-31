@@ -36,7 +36,7 @@ body {
 	border-radius: 50px;
 	border: 10px;
 	font-size: 10px;
-	height: 62vh;
+	height: 64vh;
 	position: relative;
     top: 10px;
 }
@@ -168,7 +168,28 @@ label {
 .back{
 	position: relative;
 	bottom: 40px;
+	display: inline-block;
+            padding: 1rem 2rem 1rem 2rem;
+            border-radius: 0.25rem;
+            background-color:  rgb(9, 52, 69);
+            color: #fff;
+            font: 700 0.75rem/0 "Montserrat", sans-serif;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            overflow-x: hidden;
+            
 }
+.back a{
+	text-decoration: none;
+	color: white;
+}
+.back:hover{
+	background-color: rgb(17, 79, 104);
+  	transition: background-color 0.2s;
+}
+
     </style>
 	
     <body>
@@ -211,7 +232,7 @@ label {
                 
                 		
 					<input type="submit" name = "signup" value="Send Request"/>
-					<a class="back" href="hppatient.php">Back</a>
+				<div class="back">	<a href="hppatient.php">Back</a> </div>
 
 			</form>
 		</div>
