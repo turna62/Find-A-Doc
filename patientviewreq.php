@@ -84,7 +84,15 @@ My Requests
               <?php
               if ($status == 'Rejected') {
                 ?>
-                 <a href="reschedule.php?requestId=<?php echo $requestId; ?>" class="mark-as-done-button" >Reschedule</a>
+                 <a href="reschedule.php?requestId=<?php echo $requestId; ?>" class="mark-as-done-button" > <i class="fa fa-refresh"></i> Reschedule  </a>
+                <?php
+              }
+              else {
+                ?>
+                 <a href="delete.php?requestId=<?php echo $requestId; ?>" class="mark-as-delete-button">
+                 <i class="fa fa-trash-o"></i> Delete
+                 </a>
+
                 <?php
               }
               ?>
