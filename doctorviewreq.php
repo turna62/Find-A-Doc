@@ -34,6 +34,7 @@ Booking Requests
   </title>
   <link rel="stylesheet">
   <link rel="stylesheet" href="doctorviewreq.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
@@ -43,6 +44,7 @@ Booking Requests
     </div>
     <ul class="navbar-links">
       <li><a href="HomePage.html"><i class="fa fa-home"></i> Home</a></li>
+
       <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
       </li>
     </ul>
