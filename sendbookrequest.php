@@ -1,3 +1,6 @@
+
+<!-- 2 constraints : -->
+
 <?php
 $host = "localhost";
 $dbUsername = "root";
@@ -48,6 +51,22 @@ if (mysqli_num_rows($checkResult1) == 0) {
 
     echo "<script>alert('Please choose the correct email for the selected doctor! The correct email is: " . $doctorEmail . "')</script>";
     exit();
+}
+
+
+$checkBookingCountQuery = "SELECT COUNT(*) as bookingCount FROM requests WHERE tomail = '$tomail' AND date = '$date' AND time = '$time' AND status != 'Rejected'";
+$checkBookingCountResult = mysqli_query($conn, $checkBookingCountQuery);
+
+if ($checkBookingCountResult && mysqli_num_rows($checkBookingCountResult) > 0) {
+    $bookingCountData = mysqli_fetch_assoc($checkBookingCountResult);
+    $bookingCount = $bookingCountData['bookingCount'];
+
+    if ($bookingCount >= 3) {
+        ?>
+        <script>alert("This time slot is fully booked! Please choose a different time.")</script>
+        <?php
+        exit();
+    }
 }
 
 // Check if the appointment already exists and is accepted

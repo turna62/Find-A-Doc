@@ -1,3 +1,7 @@
+
+<!-- 2 constraints : -->
+
+
 <?php 
 session_start();
 
@@ -17,7 +21,7 @@ if (!empty($review)){
 
         if ($doctorData) {
             // User is reviewing themselves
-            echo '<script>alert("You cannot review yourself as a doctor!")</script>';
+            echo '<script>alert("You cannot review yourself as a doctor!")</script>'; ///
         } else {
             // Check if the user has already reviewed this doctor
             $checkQuery = "SELECT COUNT(*) as count FROM reviews WHERE rpatientname = '$rpatientname' AND rdoctorid = '$sno'";
@@ -26,7 +30,7 @@ if (!empty($review)){
 
             if ($checkData['count'] > 0) {
                 // User has already reviewed this doctor
-                echo '<script>alert("You have already reviewed this doctor!")</script>';
+                echo '<script>alert("You have already reviewed this doctor!")</script>'; ///
             } else {
                 // Insert the new review
                 $INSERT = "INSERT INTO `reviews` (`rpatientname`, `review`, `rdoctorid`) VALUES ('$rpatientname', '$review', '$sno')";

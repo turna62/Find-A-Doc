@@ -48,7 +48,7 @@ if (isset($_SESSION['message'])) {
           <th>Patient name</th>
           <th>Email</th>
           <th>Appointment Date</th>
-          <th>Appointment time</th>
+          <th>Appointment Time</th>
           <th>Actions</th>
         </tr>
       </thead>

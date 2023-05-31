@@ -5,6 +5,6 @@ $_SESSION = array();
 
 session_destroy(); 
 
-header("Location: doctorsigninpage.html"); 
+header("Location: HomePage.html"); 
 exit();
 ?>
