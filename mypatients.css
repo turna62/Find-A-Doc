@@ -114,8 +114,11 @@ h1 {
 
 .container {
     position: relative;
-}
+    overflow: auto;
 
+    height: calc(100vh - 120px);
+   
+  }
 .container h1 {
     position: absolute;
     top: -40px;
