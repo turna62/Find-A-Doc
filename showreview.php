@@ -59,16 +59,14 @@ session_start();
         right: 60px;
     }
 
-    /* Testimonial section styles */
-    #testimonials {
-        text-align: center;
-    }
 
     .testimonial-heading h1 {
         font-size: 32px;
         font-weight: 600;
         color: white;
         margin-bottom: 30px;
+        position: relative;
+        left: 520px;
     }
 
     .testimonial-box-container {
@@ -76,6 +74,7 @@ session_start();
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
+        align-items: center; /* Add align-items property */
     }
 
     .testimonial-box {
@@ -92,8 +91,6 @@ session_start();
 
     .testimonial-box .profile {
         display: flex;
-        align-items: center;
-        justify-content: center;
         margin-bottom: 15px;
     }
 
@@ -108,8 +105,7 @@ session_start();
         font-size: 16px;
         color: #4b4b4b;
         margin-bottom: 15px;
-        align-items: center;
-        justify-content: center;
+        
     }
 
     
