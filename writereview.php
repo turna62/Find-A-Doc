@@ -148,7 +148,7 @@ session_start();
   .credentials {
     color: rgb(9, 52, 69);
     position: relative;
-    bottom: 10px;
+    top: 10px;
   }
 
   .navbar {
