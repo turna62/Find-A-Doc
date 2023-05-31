@@ -106,5 +106,14 @@ if (isset($_POST['accept'])) {
 }
 
 
+if(isset($_POST['reject']))
+{
+  $update = "UPDATE requests SET status = 'Rejected' WHERE requestId = '$requestId' AND tomail = '$doctormail'";
+  $rejected = mysqli_query($conn, $update);
+
+  header("Location: doctorviewreq.php");
+}
+
+
 
 ?>
