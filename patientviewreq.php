@@ -41,7 +41,7 @@ My Requests
   </div>
 
   <?php
-  $query = "SELECT DISTINCT pname, date, time, tomail, status FROM requests WHERE pname = '$name' AND frommail = '$email' ORDER BY date DESC, time DESC";
+  $query = "SELECT DISTINCT pname, date, time, tomail, status, requestId FROM requests WHERE pname = '$name' AND frommail = '$email' ORDER BY date DESC, time DESC";
   $result = mysqli_query($conn, $query);
   ?>
   <div class="container">
@@ -53,6 +53,7 @@ My Requests
           <th>Appointment Time</th>
           <th>Doctor Contact</th>
           <th>Status</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -62,7 +63,7 @@ My Requests
           $time = $row['time'];
           $tomail = $row['tomail'];
           $status = $row['status'];
-
+          $requestId = $row['requestId'];
           ?>
           <tr>
             <td style="text-align: center;">
@@ -78,6 +79,15 @@ My Requests
               <span class="status <?php echo $status; ?>">
                 <?php echo $status; ?>
               </span>
+              </td>
+              <td>
+              <?php
+              if ($status == 'Rejected') {
+                ?>
+                 <a href="reschedule.php?requestId=<?php echo $requestId; ?>" class="mark-as-done-button" >Reschedule</a>
+                <?php
+              }
+              ?>
             </td>
           </tr>
           <?php
