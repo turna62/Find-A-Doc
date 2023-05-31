@@ -14,13 +14,13 @@ if (!$conn) {
 } else {
   $today = date('Y-m-d');
   
-  $queryUpcoming = "SELECT * FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date > '$today' ORDER BY date ASC";
+  $queryUpcoming = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date > '$today' ORDER BY date ASC";
   $resultUpcoming = mysqli_query($conn, $queryUpcoming);
 
-  $queryToday = "SELECT * FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date = '$today' ORDER BY date ASC";
+  $queryToday = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date = '$today' ORDER BY date ASC";
   $resultToday = mysqli_query($conn, $queryToday);
 
-  $queryPast = "SELECT * FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date < '$today' ORDER BY date ASC";
+  $queryPast = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date < '$today' ORDER BY date ASC";
   $resultPast = mysqli_query($conn, $queryPast);
 }
 
@@ -60,29 +60,26 @@ if (!$conn) {
       <tbody>
         <?php
         while ($row = mysqli_fetch_array($resultToday)) {
-          $pmail = $row['frommail'];
-          $queryy = "SELECT pname, date, time, dstatus, requestId FROM requests WHERE frommail = '$pmail' AND tomail = '$demail' AND status = 'Accepted' AND date = '$today'";
-          $resultt = mysqli_query($conn, $queryy);
-          $pinfo1 = mysqli_fetch_array($resultt);
+          
 
           ?>
           <tr>
             <td>
-              <?php echo $pinfo1['pname']; ?>
+              <?php echo $row['pname']; ?>
             </td>
             <td>
-              <?php echo $pinfo1['date']; ?>
+              <?php echo $row['date']; ?>
             </td>
             <td>
-              <?php echo $pinfo1['time']; ?>
+              <?php echo $row['time']; ?>
             </td>
             <td>
-              <?php if ($pinfo1['dstatus'] === 'Scheduled') : ?>
+              <?php if ($row['dstatus'] === 'Scheduled') : ?>
                 <form action="markasdone.php" method="POST">
-                  <input type="hidden" name="requestId" value="<?php echo $pinfo1['requestId']; ?>">
+                  <input type="hidden" name="requestId" value="<?php echo $row['requestId']; ?>">
                   <button type="submit" class="mark-as-done-button">Mark as Done</button>
                 </form>
-              <?php elseif ($pinfo1['dstatus'] === 'Done') : ?>
+              <?php elseif ($row['dstatus'] === 'Done') : ?>
                 <span class="status-done">Done</span>
               <?php endif; ?>
             </td>
@@ -111,29 +108,26 @@ if (!$conn) {
       <tbody>
         <?php
         while ($row = mysqli_fetch_array($resultUpcoming)) {
-          $pmail = $row['frommail'];
-          $queryy = "SELECT pname, date, time, dstatus, requestId FROM requests WHERE frommail = '$pmail' AND tomail = '$demail' AND status = 'Accepted' AND date > '$today'";
-          $resultt = mysqli_query($conn, $queryy);
-          $pinfo1 = mysqli_fetch_array($resultt);
+          
 
           ?>
           <tr>
             <td>
-              <?php echo $pinfo1['pname']; ?>
+              <?php echo $row['pname']; ?>
             </td>
             <td>
-              <?php echo $pinfo1['date']; ?>
+              <?php echo  $row['date']; ?>
             </td>
             <td>
-              <?php echo $pinfo1['time']; ?>
+              <?php echo  $row['time']; ?>
             </td>
             <td>
-              <?php if ($pinfo1['dstatus'] === 'Scheduled') : ?>
+              <?php if ($row['dstatus'] === 'Scheduled') : ?>
                 <form action="markasdone.php" method="POST">
-                  <input type="hidden" name="requestId" value="<?php echo $pinfo1['requestId']; ?>">
+                  <input type="hidden" name="requestId" value="<?php echo $row['requestId']; ?>">
                   <button type="submit" class="mark-as-done-button">Mark as Done</button>
                 </form>
-              <?php elseif ($pinfo1['dstatus'] === 'Done') : ?>
+              <?php elseif ($row['dstatus'] === 'Done') : ?>
                 <span class="status-done">Done</span>
               <?php endif; ?>
             </td>
@@ -160,29 +154,25 @@ if (!$conn) {
       <tbody>
         <?php
         while ($row = mysqli_fetch_array($resultPast)) {
-          $pmail = $row['frommail'];
-          $queryy = "SELECT pname, date, time, dstatus, requestId FROM requests WHERE frommail = '$pmail' AND tomail = '$demail' AND status = 'Accepted' AND date > '$today'";
-          $resultt = mysqli_query($conn, $queryy);
-          $pinfo1 = mysqli_fetch_array($resultt);
-
+         
           ?>
           <tr>
             <td>
-              <?php echo $pinfo1['pname']; ?>
+              <?php echo $row['pname']; ?>
             </td>
             <td>
-              <?php echo $pinfo1['date']; ?>
+              <?php echo $row['date']; ?>
             </td>
             <td>
-              <?php echo $pinfo1['time']; ?>
+              <?php echo $row['time']; ?>
             </td>
             <td>
-              <?php if ($pinfo1['dstatus'] === 'Scheduled') : ?>
+              <?php if ($row['dstatus'] === 'Scheduled') : ?>
                 <form action="markasdone.php" method="POST">
-                  <input type="hidden" name="requestId" value="<?php echo $pinfo1['requestId']; ?>">
+                  <input type="hidden" name="requestId" value="<?php echo $row['requestId']; ?>">
                   <button type="submit" class="mark-as-done-button">Mark as Done</button>
                 </form>
-              <?php elseif ($pinfo1['dstatus'] === 'Done') : ?>
+              <?php elseif ($row['dstatus'] === 'Done') : ?>
                 <span class="status-done">Done</span>
               <?php endif; ?>
             </td>

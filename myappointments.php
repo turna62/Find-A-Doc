@@ -29,7 +29,7 @@ $name = $_SESSION['patientname'];
 <body>
 
   <?php
-  $query = "SELECT * FROM requests WHERE pname = '$name'and frommail = '$email' AND status = 'Accepted'";
+  $query = "SELECT DISTINCT pname, date, time, tomail, dstatus FROM requests WHERE pname = '$name' AND frommail = '$email' AND status = 'Accepted'";
   $result = mysqli_query($conn, $query);
 
   ?>
@@ -38,48 +38,32 @@ $name = $_SESSION['patientname'];
     <table>
       <thead>
         <tr>
-
           <th>Appointment Date</th>
           <th>Appointment time</th>
           <th>Doctor Contact</th>
           <th>Status</th>
-
         </tr>
       </thead>
       <tbody>
         <?php
         while ($row = mysqli_fetch_array($result)) {
-          $requester = $row['tomail'];
-          //echo $requester;
-        
-          $query2 = "SELECT pname, date, time, tomail, dstatus FROM requests WHERE tomail = '$requester' and frommail = '$email' AND status = 'Accepted' ";
-          $result2 = mysqli_query($conn, $query2);
+          $date = $row['date'];
+          $time = $row['time'];
+          $tomail = $row['tomail'];
+          $dstatus = $row['dstatus'];
 
-          if (!$result2) {
-            // Handle the error
-            echo "Error: " . mysqli_error($conn);
-          } else {
-            $patientinfo = mysqli_fetch_array($result2);
-            ?>
-            <tr>
-
-              <td style="text-align: center;">
-                <?php echo $patientinfo['date']; ?>
-              </td>
-              <td>
-                <?php echo $patientinfo['time']; ?>
-              </td>
-              <td>
-                <?php echo $patientinfo['tomail']; ?>
-              </td>
-              <td>
-              <span class="dstatus <?php echo $patientinfo['dstatus']; ?>">
-              <?php echo $patientinfo['dstatus']; ?>
+          ?>
+          <tr>
+            <td style="text-align: center;"><?php echo $date; ?></td>
+            <td><?php echo $time; ?></td>
+            <td><?php echo $tomail; ?></td>
+            <td>
+              <span class="dstatus <?php echo $dstatus; ?>">
+                <?php echo $dstatus; ?>
               </span>
-              </td>
-            </tr>
-            <?php
-          }
+            </td>
+          </tr>
+        <?php
         }
         ?>
       </tbody>

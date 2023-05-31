@@ -59,6 +59,8 @@ if (mysqli_num_rows($checkResult) > 0) {
                 ?>
                 <script>alert("Request sent successfully!")</script>
                 <?php
+                
+            header("Location: patientviewreq.php");
                 exit();
             } else {
                 echo "Error";

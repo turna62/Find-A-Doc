@@ -1,5 +1,4 @@
 <?php
-
 $host = "localhost";
 $dbUsername = "root";
 $dbPassword = "";
@@ -28,7 +27,7 @@ $email = $_SESSION['doctoremail'];
 <body>
 
   <?php
-  $query = "SELECT * FROM requests WHERE tomail = '$email' AND status = 'Pending'";
+  $query = "SELECT DISTINCT pname, frommail, date, time, requestId FROM requests WHERE tomail = '$email' AND status = 'Pending'";
   $result = mysqli_query($conn, $query);
   ?>
   <div class="container">
@@ -41,61 +40,35 @@ $email = $_SESSION['doctoremail'];
           <th>Appointment Date</th>
           <th>Appointment time</th>
           <th>Actions</th>
-
         </tr>
       </thead>
       <tbody>
         <?php
-
         while ($row = mysqli_fetch_array($result)) {
-          $requester = $row['frommail'];
-          //echo $requester;
-        
-          $query2 = "SELECT pname, date, time FROM requests WHERE frommail = '$requester' and tomail = '$email' AND status = 'Pending' ";
-          $result2 = mysqli_query($conn, $query2);
-
-          if (!$result2) {
-            // Handle the error
-            echo "Error: " . mysqli_error($conn);
-          } else {
-            $patientinfo = mysqli_fetch_array($result2);
-            ?>
-            <tr>
-              <td>
-                <?php echo $patientinfo['pname']; ?>
-              </td>
-              <td style="text-align: center;">
-                <?php echo $requester; ?>
-              </td>
-              <td>
-                <?php echo $patientinfo['date']; ?>
-              </td>
-              <td>
-                <?php echo $patientinfo['time']; ?>
-              </td>
-              <td>
-                <form action="processrequest.php?email=<?php echo $requester; ?>" method="post" class="action-buttons">
-                  <!-- <button type="submit" class="btn accept">Accept</button>
-                  <button type="submit" class="btn reject">Reject</button> -->
-                  <input type="submit" value="Accept" class="btn accept button" name="accept">
-                  <input type="submit" value="Reject" class="btn reject button" name="reject">
-                </form>
-              </td>
-
-            </tr>
-            <?php
-          }
+          $patientName = $row['pname'];
+          $patientEmail = $row['frommail'];
+          $date = $row['date'];
+          $time = $row['time'];
+          $requestId = $row['requestId'];
+          ?>
+          <tr>
+            <td><?php echo $patientName; ?></td>
+            <td><?php echo $patientEmail; ?></td>
+            <td><?php echo $date; ?></td>
+            <td><?php echo $time; ?></td>
+            <td>
+              <form action="processrequest.php?requestId=<?php echo $requestId; ?>" method="post" class="action-buttons">
+                <input type="submit" value="Accept" class="btn accept button" name="accept">
+                <input type="submit" value="Reject" class="btn reject button" name="reject">
+              </form>
+            </td>
+          </tr>
+          <?php
         }
         ?>
       </tbody>
     </table>
   </div>
-
-  <?php
-
-
-  ?>
-
 
 </body>
 
