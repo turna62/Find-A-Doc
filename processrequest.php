@@ -63,6 +63,31 @@ if (isset($_POST['accept'])) {
     $_SESSION['message'] = "You have already accepted a request from $patientName2 for the selected time slot.";
     header("Location: doctorviewreq.php");
   } else {
+    // Check if the doctor has already accepted a request from the same patient for the same day
+    $checkQuery = "SELECT COUNT(*) AS count, pname, time FROM requests WHERE date = '$date' AND status = 'Accepted' AND tomail = '$doctormail' AND frommail = '$patientEmail'";
+    $checkResult = mysqli_query($conn, $checkQuery);
+  
+    if ($checkResult === false) {
+      // Handle the query execution error
+      die('Error executing the query: ' . mysqli_error($conn));
+    }
+  
+    $row = mysqli_fetch_assoc($checkResult);
+  
+    if ($row === null) {
+      // Handle the case when no rows are returned
+      die('Error retrieving accepted requests count');
+    }
+  
+    $acceptedCount = $row['count'];
+    $patientName3 = $row['pname'];
+    $patientTime3 = $row['time'];
+  
+    if ($acceptedCount >= 1) {
+      // Set an error message in the session
+      $_SESSION['message'] = "Sorry! You have already accepted a request from $patientName3 for a different time slot on the same day.";
+      header("Location: doctorviewreq.php");
+    } else {
     // Check if the time slot is already accepted by another doctor
     $checkQuery = "SELECT COUNT(*) AS count, pname, date, time FROM requests WHERE date = '$date' AND time = '$time' AND status = 'Accepted' AND tomail != '$doctormail'";
     $checkResult = mysqli_query($conn, $checkQuery);
@@ -104,7 +129,7 @@ if (isset($_POST['accept'])) {
   }
 }
 }
-
+}
 
 if(isset($_POST['reject']))
 {
