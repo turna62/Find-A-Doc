@@ -1,3 +1,6 @@
+
+<!-- 2 constraints : -->
+
 <?php
 $host = "localhost";
 $dbUsername = "root";

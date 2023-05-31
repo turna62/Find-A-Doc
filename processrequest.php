@@ -15,7 +15,7 @@ if (!$conn) {
   echo "Connection failed!";
 }
 
-if (isset($_POST['accept'])) {
+if (isset($_POST['accept'])) { 
   $requestId = $_GET['requestId'];
 
   // Retrieve the request information
@@ -99,7 +99,7 @@ if (isset($_POST['accept'])) {
     }
 
     // Set a success message in the session
-    $_SESSION['message'] = "You have accepted the booking request for $patientName on $date at $time.";
+   // $_SESSION['message'] = "You have accepted the booking request for $patientName on $date at $time.";
     header("Location: mypatients.php");
   }
 }
