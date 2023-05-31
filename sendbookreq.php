@@ -198,11 +198,15 @@ label {
                
   <select class="opt" name="time" id="apoint" value="Select Time">
     <option class="opt" value="volvo">Select Time</option>
-    <option value="12PM to 2PM">12PM to 2PM</option>
-    <option value="2PM to 4PM">2PM to 4PM</option>
-    <option value="4PM to 6PM">4PM to 6PM</option>
-    <option value="6PM to 8PM">6PM to 8PM</option>
-    <option value="8PM to 10PM">8PM to 10PM</option>
+    <option value="9AM to 10AM">9AM to 10AM</option>
+    <option value="10AM to 11PM">10AM to 11PM</option>
+    <option value="11AM to 12PM">11AM to 12PM</option>
+    <option value="12PM to 1PM">12PM to 1PM</option>
+    <option value="1PM to 2PM">1PM to 2PM</option>
+	<option value="2PM to 3PM">2PM to 3PM</option>
+    <option value="3PM to 4PM">3PM to 4PM</option>
+    <option value="4PM to 5PM">4PM to 5PM</option>
+
   </select>
                 
                 		
