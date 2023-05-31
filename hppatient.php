@@ -136,7 +136,7 @@ body{
   <a href="patientprofile.php"><i class="fas fa-user"></i> My Profile</a>
   <a href="myappointments.php"><i class="fa fa-stethoscope"></i> My Appoinments</a>
   <a href="patientviewreq.php"><i class="fa fa-medkit"></i> My Requests</a>
-  <a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i>Log Out</a>
+  <a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Log Out</a>
 </div>
         
             <div class="search">
