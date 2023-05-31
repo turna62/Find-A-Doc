@@ -14,13 +14,13 @@ if (!$conn) {
 } else {
   $today = date('Y-m-d');
   
-  $queryUpcoming = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date > '$today' ORDER BY date ASC";
+  $queryUpcoming = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date > '$today' ORDER BY time ASC";
   $resultUpcoming = mysqli_query($conn, $queryUpcoming);
 
-  $queryToday = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date = '$today' ORDER BY date ASC";
+  $queryToday = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date = '$today' ORDER BY time ASC";
   $resultToday = mysqli_query($conn, $queryToday);
 
-  $queryPast = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date < '$today' ORDER BY date ASC";
+  $queryPast = "SELECT DISTINCT pname, date, time, dstatus, requestId FROM requests WHERE tomail = '$demail' AND status = 'Accepted' AND date < '$today' ORDER BY time ASC";
   $resultPast = mysqli_query($conn, $queryPast);
 }
 
