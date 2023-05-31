@@ -18,14 +18,27 @@ $name = $_SESSION['patientname'];
 <html>
 
 <head>
-  <title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <title>
+My Requests
   </title>
   <link rel="stylesheet">
   <link rel="stylesheet" href="patientviewreq.css">
 </head>
 
 <body>
+  <div class="navbar">
+    <div class="logo">
+      <h2><i class="fa fa-user-md"></i> Find-A-Doc</h2>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="HomePage.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="hppatient.php"><i class="fa fa-home"></i>Dashboard</a></li>
+      <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+      </li>
+    </ul>
+  </div>
 
   <?php
   $query = "SELECT DISTINCT pname, date, time, tomail, status, requestId FROM requests WHERE pname = '$name' AND frommail = '$email' ORDER BY date DESC, time DESC";

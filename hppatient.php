@@ -86,7 +86,7 @@ body{
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  left: 0; 
   background-color: rgb(9, 52, 69);
   overflow-x: hidden;
   padding-top: 20px;
