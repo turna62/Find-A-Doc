@@ -36,7 +36,7 @@ body {
 	border-radius: 50px;
 	border: 10px;
 	font-size: 10px;
-	height: 55vh;
+	height: 52vh;
 	position: relative;
     top: 10px;
 }
@@ -165,13 +165,66 @@ label {
 	position: relative;
 	bottom: 30px;
 }
-.back{
-	position: relative;
-	bottom: 40px;
-}
+.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(9, 52, 69);
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: #fff;
+      z-index: 9999;
+  }
+
+  .logo h2 {
+      height: 30px;
+  }
+
+  .navbar-links {
+      list-style: none;
+      display: flex;
+  }
+
+  .navbar-links li {
+      margin-left: 10px;
+  }
+
+  .navbar-links li:first-child {
+      margin-left: 0;
+  }
+
+  .navbar-links li a {
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #2980b9;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin-top:5px;
+  }
+
+  .navbar-links li a:hover {
+      background-color: #1e6692;
+  }
     </style>
 	
     <body>
+
+	<div class="navbar">
+    <div class="logo">
+    </div>
+    <ul class="navbar-links">
+      <li><a href="hppatient.php"><i class="fa fa-angle-left"></i> Back</a></li>
+      <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+      </li>
+    </ul>
+  </div>
+
 		<?php
 
       require 'dbConfig.php';
@@ -180,7 +233,7 @@ label {
       ?>
 		
 		<div class="UserSignUp">
-			<h1> Reschedule </h1>
+			<h1> Reschedule Booking</h1>
 			<form action="reschedule-process.php?requestId=<?php echo $requestId; ?>" method="post" autocomplete="on">
             <input type="hidden" name="requestId" value="<?php echo $requestId; ?>">
   
@@ -207,7 +260,6 @@ label {
                 
                 		
 					<input type="submit" name = "signup" value="Send Request"/>
-					<a class="back" href="hppatient.php">Back</a>
 
 			</form>
 		</div>

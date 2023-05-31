@@ -44,9 +44,9 @@ Booking Requests
     </div>
     <ul class="navbar-links">
       <li><a href="HomePage.html"><i class="fa fa-home"></i> Home</a></li>
-
+      <li><a href="doctorprofile.php"><i class="fa fa-angle-left"></i> Back</a>
       <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
-      </li>
+      </li> 
     </ul>
   </div>
   <?php
