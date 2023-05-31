@@ -143,17 +143,17 @@ table tr:hover {
   
   .Pending {
     background-color: yellow;
-    color: rgb(23, 74, 94);
+    color: white;
   }
   
   .Accepted {
     background-color: #0d7612;
-    color: rgb(23, 74, 94);
+    color: white;
   }
   
   .Rejected {
     background-color: rgb(181, 10, 10);
-    color: rgb(23, 74, 94);
+    color: white;
   }
   .navbar {
       position: fixed;

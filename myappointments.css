@@ -143,12 +143,12 @@ table tr:hover {
   
   .Scheduled {
     background-color: yellow;
-    color: rgb(23, 74, 94);
+    color: white;
   }
   
   .Done {
     background-color: #0d7612;
-    color: rgb(23, 74, 94);
+    color: white;
   }
   
 .navbar {
