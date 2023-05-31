@@ -77,6 +77,8 @@ session_start();
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
+        align-items: center;
+        /* Add align-items property */
     }
 
     .testimonial-box {
@@ -109,7 +111,7 @@ session_start();
         margin-bottom: 15px;
         align-items: center;
         justify-content: center;
-        text-align: center;
+
     }
 
 

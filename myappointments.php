@@ -27,13 +27,27 @@ $name = $_SESSION['patientname'];
 </head>
 
 <body>
+  <div class="navbar">
+    <div class="logo">
+      <h2>Find-A-Doc</h2>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="HomePage.html">Home</a></li>
+      <li><a href="plogout.php">Logout</a>
+      </li>
+    </ul>
+  </div>
+  </br>
+
+
 
   <?php
   $query = "SELECT DISTINCT pname, date, time, tomail, dstatus FROM requests WHERE pname = '$name' AND frommail = '$email' AND status = 'Accepted' ORDER BY date DESC, time DESC";
   $result = mysqli_query($conn, $query);
 
-  ?>
+  ?></br>
   <div class="container">
+
     <h1>My Appointments</h1>
     <table>
       <thead>
@@ -54,16 +68,22 @@ $name = $_SESSION['patientname'];
 
           ?>
           <tr>
-            <td style="text-align: center;"><?php echo $date; ?></td>
-            <td><?php echo $time; ?></td>
-            <td><?php echo $tomail; ?></td>
+            <td style="text-align: center;">
+              <?php echo $date; ?>
+            </td>
+            <td>
+              <?php echo $time; ?>
+            </td>
+            <td>
+              <?php echo $tomail; ?>
+            </td>
             <td>
               <span class="dstatus <?php echo $dstatus; ?>">
                 <?php echo $dstatus; ?>
               </span>
             </td>
           </tr>
-        <?php
+          <?php
         }
         ?>
       </tbody>
