@@ -125,6 +125,8 @@ h2{
              <a href="mypatients.php" > My Patients</a>
              <div class="btn" id="btn">
             
+             <a href="dlogout.php">Log Out</a>
+             
           
         </div> 
           
