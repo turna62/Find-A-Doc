@@ -114,7 +114,7 @@ h1 {
 
 .container {
     position: relative;
-    overflow: auto;
+    overflow-y: hidden;
     margin-bottom: 60px;
     height: calc(130vh - 120px);
    
