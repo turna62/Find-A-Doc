@@ -12,6 +12,16 @@ if (mysqli_connect_error()) {
 
 session_start();
 $email = $_SESSION['doctoremail'];
+
+if (isset($_SESSION['message'])) {
+  $message = $_SESSION['message'];
+
+  // Display the message
+  echo "<script>alert('$message')</script>";
+
+  // Clear the message from the session
+  unset($_SESSION['message']);
+}
 ?>
 
 <html>
