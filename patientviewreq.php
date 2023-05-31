@@ -18,6 +18,8 @@ $name = $_SESSION['patientname'];
 <html>
 
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>
 
   </title>
@@ -28,11 +30,11 @@ $name = $_SESSION['patientname'];
 <body>
   <div class="navbar">
     <div class="logo">
-      <h2>Find-A-Doc</h2>
+      <h2><i class="fa fa-user-md"></i> Find-A-Doc</h2>
     </div>
     <ul class="navbar-links">
-      <li><a href="HomePage.html">Home</a></li>
-      <li><a href="plogout.php">Logout</a>
+      <li><a href="HomePage.html"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a> 
       </li>
     </ul>
   </div>
