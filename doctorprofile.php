@@ -69,7 +69,7 @@ if (!$conn) {
   border-radius: 5px;
   position: relative;
   top: 90px;
-  left: 160px;
+  left: 110px;
   font-size: 15px;
 }
 

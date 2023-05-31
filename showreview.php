@@ -10,7 +10,7 @@ session_start();
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, intial-scale=1.0">
-<title>RRF Doctor Reviews</title>
+<title>Doctor Reviews</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -39,7 +39,7 @@ session_start();
 
     body {
         font-family: 'Poppins', sans-serif;
-        background-color: rgb(131, 208, 239);
+        background-color: #093445;
         overflow-x: hidden;
     }
 
@@ -47,7 +47,7 @@ session_start();
         position: relative;
         left: 40px;
         top: 30px;
-        color: #093445;
+        color: white;
     }
 
     /* Container styles */
@@ -55,6 +55,8 @@ session_start();
         max-width: 900px;
         margin: 0 auto;
         padding: 20px;
+        position: relative;
+        right: 60px;
     }
 
     /* Testimonial section styles */
@@ -65,7 +67,7 @@ session_start();
     .testimonial-heading h1 {
         font-size: 32px;
         font-weight: 600;
-        color: #093445;
+        color: white;
         margin-bottom: 30px;
     }
 
@@ -79,8 +81,7 @@ session_start();
     .testimonial-box {
         width: 100vh;
         padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 6px white;
         background-color: #fff;
         transition: transform 0.3s ease;
     }
@@ -107,18 +108,16 @@ session_start();
         font-size: 16px;
         color: #4b4b4b;
         margin-bottom: 15px;
+        align-items: center;
+        justify-content: center;
     }
 
-    .testimonial-box .client-comment .review-date {
-        font-size: 14px;
-        color: #888888;
-    }
-
+    
     /* Total review count styles */
     .totalreview {
         font-size: 24px;
         font-weight: 600;
-        color: #093445;
+        color: white;
         text-align: center;
         position: relative;
         bottom: 20px;

@@ -165,6 +165,10 @@ label {
 	position: relative;
 	bottom: 30px;
 }
+.back{
+	position: relative;
+	bottom: 40px;
+}
     </style>
 	
     <body>
@@ -200,11 +204,10 @@ label {
     <option value="6PM to 8PM">6PM to 8PM</option>
     <option value="8PM to 10PM">8PM to 10PM</option>
   </select>
-  
                 
-                
-				
+                		
 					<input type="submit" name = "signup" value="Send Request"/>
+					<a class="back" href="hppatient.php">Back</a>
 
 			</form>
 		</div>
