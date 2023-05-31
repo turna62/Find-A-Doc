@@ -18,6 +18,9 @@ if (mysqli_connect_error()) {
   die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
 }
 
+$did = $_GET['docid'];
+
+
 if ($tomail == $frommail) {
     ?>
     <script>alert("You cannot request an appointment with yourself!")</script>
@@ -25,6 +28,27 @@ if ($tomail == $frommail) {
     exit();
 }
 
+$checkQuery1 = "SELECT * FROM doctor WHERE doctorid = '$did' AND doctoremail = '$tomail'";
+$checkResult1 = mysqli_query($conn, $checkQuery1);
+
+if (!$checkResult1) {
+    echo "Error executing query: " . mysqli_error($conn);
+    exit();
+}
+
+if (mysqli_num_rows($checkResult1) == 0) {
+    $doctorEmail = ''; 
+    $getDoctorEmailQuery = "SELECT doctoremail FROM doctor WHERE doctorid = '$did'";
+    $doctorEmailResult = mysqli_query($conn, $getDoctorEmailQuery);
+
+    if ($doctorEmailResult && mysqli_num_rows($doctorEmailResult) > 0) {
+        $doctorData = mysqli_fetch_assoc($doctorEmailResult);
+        $doctorEmail = $doctorData['doctoremail'];
+    }
+
+    echo "<script>alert('Please choose the correct email for the selected doctor! The correct email is: " . $doctorEmail . "')</script>";
+    exit();
+}
 
 // Check if the appointment already exists and is accepted
 $checkQuery = "SELECT * FROM requests WHERE tomail = '$tomail' AND date = '$date' AND time = '$time' AND status = 'Accepted'";

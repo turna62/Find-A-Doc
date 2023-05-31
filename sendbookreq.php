@@ -168,11 +168,16 @@ label {
     </style>
 	
     <body>
+		<?php
+
+      require 'dbConfig.php';
+      $sno = $_GET['docid'];
+
+      ?>
+		
 		<div class="UserSignUp">
 			<h1>Send Booking Request</h1>
-			<form action="sendbookrequest.php" method="post" autocomplete="on">
-				
-
+			<form action="sendbookrequest.php<?php echo '?docid=' . $sno; ?>" method="post" autocomplete="on">
 
                 <label for="email" class="mail">
 					<i class="fas fa-envelope"></i>

@@ -70,7 +70,7 @@ session_start();
 
                     <?php
                     echo '
-        <a class="cbtnn1" href="sendbookreq.html?docid=' . $sno . '">Send Request</a>   
+        <a class="cbtnn1" href="sendbookreq.php?docid=' . $sno . '">Send Request</a>   
         <a class="cbtnn3" href="writereview.php?docid=' . $sno . '">Review Here</a>                   
         <a class="cbtnn2" href="showreview.php?docid=' . $sno . '">Reviews</a>           
                  
