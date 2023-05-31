@@ -37,7 +37,7 @@ if (isset($_SESSION['message'])) {
 <body>
 
   <?php
-  $query = "SELECT DISTINCT pname, frommail, date, time, requestId FROM requests WHERE tomail = '$email' AND status = 'Pending'";
+  $query = "SELECT DISTINCT pname, frommail, date, time, requestId FROM requests WHERE tomail = '$email' AND status = 'Pending' ORDER BY date ASC, time ASC";
   $result = mysqli_query($conn, $query);
   ?>
   <div class="container">

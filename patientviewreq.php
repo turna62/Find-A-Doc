@@ -28,7 +28,7 @@ $name = $_SESSION['patientname'];
 <body>
 
   <?php
-  $query = "SELECT DISTINCT pname, date, time, tomail, status FROM requests WHERE pname = '$name' AND frommail = '$email'";
+  $query = "SELECT DISTINCT pname, date, time, tomail, status FROM requests WHERE pname = '$name' AND frommail = '$email' ORDER BY date DESC, time DESC";
   $result = mysqli_query($conn, $query);
   ?>
   <div class="container">
