@@ -125,7 +125,7 @@
               $row_cnt = $query_run->num_rows;
 
 
-              echo "<div class='alerti alert-success mt-3 text-center' role='alert' style='color: white;'>$row_cnt doctor(s) of location: $check found!</div>";
+              echo "<div class='alerti alert-success mt-3 text-center' role='alert' style='color:white'>$row_cnt doctor(s) of location: $check found!</div>";
 
 
 

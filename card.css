@@ -44,10 +44,9 @@ body {
   
   .alerti {
     text-align: center;
-    font-size: 28px;
     position: relative;
     left: 80px;  
-    
+    font-size: 18px;
   }
   
   
