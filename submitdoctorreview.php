@@ -32,17 +32,26 @@ if (!empty($review)){
                 // User has already reviewed this doctor
                 echo '<script>alert("You have already reviewed this doctor!")</script>'; ///
             } else {
-                // Insert the new review
-                $INSERT = "INSERT INTO `reviews` (`rpatientname`, `review`, `rdoctorid`) VALUES ('$rpatientname', '$review', '$sno')";
-            
-                if(mysqli_query($db, $INSERT))
-                {
-                    echo '<script>alert("Review Successful!")</script>';
-                    header("Location: showreview.php?docid=$sno");
-                    exit;
-                }
-                else {
-                    echo '<script>alert("Error while submitting review! Please try again!")</script>';
+                // Check if the patient has a 'Done' status from the doctor in requests table
+                $statusQuery = "SELECT dstatus FROM requests WHERE frommail = '$rpatientname' AND tomail = (SELECT doctorname FROM doctor WHERE doctorid = '$sno') AND dstatus = 'Done'";
+                $statusResult = mysqli_query($db, $statusQuery);
+                $statusData = mysqli_fetch_assoc($statusResult);
+
+                if (!$statusData) {
+                    echo '<script>alert("You must have a completed appointment with the doctor before giving a review!")</script>'; ///
+                } else {
+                    // Insert the new review
+                    $INSERT = "INSERT INTO `reviews` (`rpatientname`, `review`, `rdoctorid`) VALUES ('$rpatientname', '$review', '$sno')";
+                
+                    if(mysqli_query($db, $INSERT))
+                    {
+                        echo '<script>alert("Review Successful!")</script>';
+                        header("Location: showreview.php?docid=$sno");
+                        exit;
+                    }
+                    else {
+                        echo '<script>alert("Error while submitting review! Please try again!")</script>';
+                    }
                 }
             }
         }
