@@ -116,7 +116,7 @@ h1 {
     position: relative;
     overflow: auto;
     margin-bottom: 60px;
-    height: calc(130vh - 120px);
+    height: calc(120vh - 120px);
    
   }
 .container h1 {
