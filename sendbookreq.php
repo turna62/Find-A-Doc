@@ -199,7 +199,7 @@ label {
   <select class="opt" name="time" id="apoint" value="Select Time">
     <option class="opt" value="volvo">Select Time</option>
     <option value="9AM to 10AM">9AM to 10AM</option>
-    <option value="10AM to 11PM">10AM to 11PM</option>
+    <option value="10AM to 11PM">10AM to 11AM</option>
     <option value="11AM to 12PM">11AM to 12PM</option>
     <option value="12PM to 1PM">12PM to 1PM</option>
     <option value="1PM to 2PM">1PM to 2PM</option>
