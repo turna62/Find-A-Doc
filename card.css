@@ -5,21 +5,18 @@ body {
   }
   
   h2 {
-    font-size: 2rem;
-    color: #ffffff;
+    font-size: 1.6rem;
+    color: rgb(9, 52, 69);
     /* Set the heading color to white */
-    margin-top: 0;
     text-align: center;
-    text-transform: uppercase;
     font-weight: bold;
     padding: 15px;
-    background-color: rgb(9, 52, 69);
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
     position: relative;
     right: 10px;
-    bottom: 10px;
+    top: 40px;
   }
   
   .row {
@@ -171,4 +168,49 @@ body {
       }
     }
   
-  
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(9, 52, 69);
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: #fff;
+      z-index: 9999;
+  }
+
+  .logo h2 {
+      height: 30px;
+  }
+
+  .navbar-links {
+      list-style: none;
+      display: flex;
+  }
+
+  .navbar-links li {
+      margin-left: 10px;
+  }
+
+  .navbar-links li:first-child {
+      margin-left: 0;
+  }
+
+  .navbar-links li a {
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #2980b9;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      margin-top:5px;
+  }
+
+  .navbar-links li a:hover {
+      background-color: #1e6692;
+  }
