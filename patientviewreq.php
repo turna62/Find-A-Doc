@@ -26,6 +26,16 @@ $name = $_SESSION['patientname'];
 </head>
 
 <body>
+  <div class="navbar">
+    <div class="logo">
+      <h2>Find-A-Doc</h2>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="HomePage.html">Home</a></li>
+      <li><a href="plogout.php">Logout</a>
+      </li>
+    </ul>
+  </div>
 
   <?php
   $query = "SELECT DISTINCT pname, date, time, tomail, status FROM requests WHERE pname = '$name' AND frommail = '$email' ORDER BY date DESC, time DESC";
