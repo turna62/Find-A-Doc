@@ -51,6 +51,7 @@ session_start();
         left: 40px;
         top: 30px;
         color: white;
+        margin-top: 25px;
     }
 
     /* Container styles */
@@ -128,11 +129,76 @@ session_start();
     .totalreview span {
         color: #f8ae46;
     }
+
+    .navbar {
+        margin-top: 1px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #2980b9;
+
+        /*rgb(9, 52, 69)*/
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        color: #fff;
+        z-index: 9999;
+    }
+
+    .logo h2 {
+        height: 30px;
+    }
+
+    .navbar-links {
+        margin-top: 4px;
+        list-style: none;
+        display: flex;
+    }
+
+    .navbar-links li {
+        margin-left: 10px;
+    }
+
+    .navbar-links li:first-child {
+        margin-left: 0;
+    }
+
+    .navbar-links li a {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #2980b9;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .navbar-links li a:hover {
+        background-color: #1e6692;
+    }
+
+    hr {
+        color: white;
+    }
 </style>
 
 <body>
 
-
+    <div class="navbar">
+        <div class="logo">
+            <h2><i class="fa fa-user-md"></i> Find-A-Doc</h2>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="HomePage.html"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="hppatient.php"><i class="fa fa-home"></i>Dashboard</a></li>
+            <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
+            </li>
+        </ul>
+    </div>
+    <hr>
 
 
 

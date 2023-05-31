@@ -18,7 +18,7 @@ $name = $_SESSION['patientname'];
 <html>
 
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <title>
 
@@ -34,7 +34,8 @@ $name = $_SESSION['patientname'];
     </div>
     <ul class="navbar-links">
       <li><a href="HomePage.html"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a> 
+      <li><a href="hppatient.php"><i class="fa fa-home"></i>Dashboard</a></li>
+      <li><a href="plogout.php"><i class="fa fa-fw fa-sign-out"></i> Logout</a>
       </li>
     </ul>
   </div>
