@@ -35,7 +35,16 @@ if (isset($_SESSION['message'])) {
 </head>
 
 <body>
-
+  <div class="navbar">
+    <div class="logo">
+      <h2>Find-A-Doc</h2>
+    </div>
+    <ul class="navbar-links">
+      <li><a href="HomePage.html">Home</a></li>
+      <li><a href="plogout.php">Logout</a>
+      </li>
+    </ul>
+  </div>
   <?php
   $query = "SELECT DISTINCT pname, frommail, date, time, requestId FROM requests WHERE tomail = '$email' AND status = 'Pending' ORDER BY date ASC, time ASC";
   $result = mysqli_query($conn, $query);
@@ -62,10 +71,18 @@ if (isset($_SESSION['message'])) {
           $requestId = $row['requestId'];
           ?>
           <tr>
-            <td><?php echo $patientName; ?></td>
-            <td><?php echo $patientEmail; ?></td>
-            <td><?php echo $date; ?></td>
-            <td><?php echo $time; ?></td>
+            <td>
+              <?php echo $patientName; ?>
+            </td>
+            <td>
+              <?php echo $patientEmail; ?>
+            </td>
+            <td>
+              <?php echo $date; ?>
+            </td>
+            <td>
+              <?php echo $time; ?>
+            </td>
             <td>
               <form action="processrequest.php?requestId=<?php echo $requestId; ?>" method="post" class="action-buttons">
                 <input type="submit" value="Accept" class="btn accept button" name="accept">

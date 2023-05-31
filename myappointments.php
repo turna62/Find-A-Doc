@@ -39,7 +39,7 @@ $name = $_SESSION['patientname'];
       </li>
     </ul>
   </div>
-  </br>
+
 
 
 
