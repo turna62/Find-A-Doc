@@ -1,4 +1,4 @@
-/* color variables */
+* color variables */
 /* border radius */
 *,
 *::before,
@@ -31,7 +31,11 @@ table {
     margin-right: 20px;
     /* Increase the margin-top to move the table lower */
 }
-
+.container {
+    position: relative;
+    margin-bottom: 60px;
+    height: calc(120vh - 120px);
+  }
 /* Rest of the CSS code remains the same */
 
 table thead {
@@ -65,10 +69,11 @@ table td {
     text-align: center;
     border: 1px solid #dcdbdb;
 }
+
 table tr:hover {
     background-color: #c9dde8;
     color: #ffffff;
-    
+
 }
 
 @media screen and (max-width: 768px) {
@@ -111,13 +116,10 @@ h1 {
     }
 }
 
-.container {
-    position: relative;
-}
 
 .container h1 {
     position: absolute;
-    top: -40px;
+   
     left: 50%;
     transform: translateX(-50%);
     margin-top: 10px;
@@ -133,68 +135,67 @@ table tr:hover {
     /* Move the row horizontally when hovered */
 }
 
-
-.dstatus {
+.mark-as-done-button {
     display: inline-block;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-weight: bold;
-  }
-  
-  .Scheduled {
-    background-color: #f5a623;
-    color: white;
-  }
-  
-  .Done {
-    background-color: #0d7612;
-    color: white;
-  }
-  
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgb(9, 52, 69);
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    color: #fff;
-    z-index: 9999;
-}
-
-.logo h2 {
-    height: 30px;
-        
-   
-}
-
-.navbar-links {
-    list-style: none;
-    display: flex;
-}
-
-.navbar-links li {
-    margin-left: 10px;
-}
-
-.navbar-links li:first-child {
-    margin-left: 0;
-}
-
-.navbar-links li a {
-    color: #fff;
+    padding: 6px 12px;
+    background-color: #337ab7;
+    color: #ffffff;
     text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #2980b9;
     border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
+    border: 2px solid #337ab7;;
+  }
+  
+  .mark-as-done-button:hover {
+    background-color: #23527c;
+  }
 
-.navbar-links li a:hover {
-    background-color: #1e6692;
-}
+  .appointment-count {
+    font-weight: bold;
+    color:black;
+    margin-top: 50px;
+  }
+  .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(9, 52, 69);
+      height: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+      color: #fff;
+      z-index: 9999;
+  }
+
+  .logo h2 {
+      height: 30px;
+  }
+
+  .navbar-links {
+      list-style: none;
+      display: flex;
+  }
+
+  .navbar-links li {
+      margin-left: 10px;
+  }
+
+  .navbar-links li:first-child {
+      margin-left: 0;
+  }
+
+  .navbar-links li a {
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #2980b9;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+  }
+
+  .navbar-links li a:hover {
+      background-color: #1e6692;
+  }
