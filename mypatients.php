@@ -62,7 +62,7 @@ if (!$conn) {
 
 
 
-    <h3 class="appointment-count"> Today's appointments:
+    <h3 class="appointment-count"> Present appointments:
       <?php echo $countToday; ?>
     </h3>
     <table>
