@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
+$host = "";
 $dbUsername = "root";
 $dbPassword = "";
-$dbname = "findadoc";
+$dbname = "";
 
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 

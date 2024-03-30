@@ -1,10 +1,10 @@
 <?php
 
 $sname = "localhost";
-$uname = "root";
+$uname = "";
 $password = "";
 
-$db_name = "findadoc";
+$db_name = "";
 
 $conn = mysqli_connect($sname, $uname, $password, $db_name);
 

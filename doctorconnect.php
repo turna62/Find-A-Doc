@@ -33,15 +33,15 @@
 
     $mail->Port = "587";
 
-    $mail->Username = "find.a.doc.983@gmail.com"; 
+    $mail->Username = ""; 
 
-    $mail->Password = "sgkmuthnxgpwuuxt"; 
+    $mail->Password = ""; 
 
     $mail->isHTML(true);
 
     $mail->Subject = "Find A Doc - Verify Mail";
 
-    $mail->setFrom("find.a.doc.983@gmail.com"); 
+    $mail->setFrom(""); 
 
     $mail->Body = "Dear doctor, Thank you for registering! Click the link to verify your email
                    <a href='http://localhost/Find-A-Doc/doctorverify.php?doctoremail=$doctoremail&code=$code'> Verify </a>";
@@ -64,7 +64,7 @@
         
       //header("Location:"); //
       ?>      
-      <script>alert("email thik na!")</script>
+      <script>alert("wrong email!")</script>
       <?php
       exit();
 
@@ -74,7 +74,7 @@
     if (strlen($_POST['doctorpassword']) > 15 || strlen($_POST['doctorpassword']) < 8  || ctype_upper($_POST['doctorpassword']) || ctype_lower($_POST['doctorpassword']) || !preg_match("/[0-9]/", $_POST['doctorpassword'])) {
       //header("Location:"); //
       ?>      
-      <script>alert("password thik na!")</script>
+      <script>alert("wrong password!")</script>
       <?php
       exit();
 
@@ -86,9 +86,9 @@
     if($doctorpassword == $doctorconfirm)
     {
       $host = "localhost";
-      $dbUsername = "root";
+      $dbUsername = "";
       $dbPassword = "";
-      $dbname = "findadoc";
+      $dbname = "";
 
       $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
@@ -132,7 +132,7 @@
         {
           //header(""); //
           ?>      
-          <script>alert("email gese!")</script>
+          <script>alert("email sent!")</script>
           <?php
           exit();
         }
@@ -143,7 +143,7 @@
     {
       //header("Location:"); //
       ?>      
-      <script>alert("hoy nai!")</script>
+      <script>alert("error!")</script>
       <?php
       exit();
     }
@@ -153,7 +153,7 @@
   {
     //header("Location:"); //
     ?>      
-      <script>alert("thik na!")</script>
+      <script>alert("error!")</script>
       <?php
       exit();
   }

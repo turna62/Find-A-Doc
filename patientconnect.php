@@ -32,15 +32,15 @@
 
     $mail->Port = "587";
 
-    $mail->Username = "find.a.doc.983@gmail.com"; 
+    $mail->Username = ""; 
 
-    $mail->Password = "sgkmuthnxgpwuuxt"; 
+    $mail->Password = ""; 
 
     $mail->isHTML(true);
 
     $mail->Subject = "Find A Doc - Verify Mail";
 
-    $mail->setFrom("find.a.doc.983@gmail.com"); 
+    $mail->setFrom(""); 
 
     $mail->Body = "Dear patient, Thank you for registering! Click the link to verify your email
                    <a href='http://localhost/Find-A-Doc/patientverify.php?patientemail=$patientemail&code=$code'> Verify </a>";
@@ -78,9 +78,9 @@
     if($patientpassword == $patientconfirm)
     {
       $host = "localhost";
-      $dbUsername = "root";
+      $dbUsername = "";
       $dbPassword = "";
-      $dbname = "findadoc";
+      $dbname = "";
 
       $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
@@ -90,7 +90,7 @@
     $res = mysqli_query($conn, $sql);
 
   if(mysqli_num_rows($res) > 0){
-    header("Location:"); //
+    header("Location:"); 
       exit();
 
   }
@@ -127,9 +127,9 @@
     }
     else
     {
-      // echo `hoy nai`; //
+    
       ?>      
-      <script>alert("hoy nai!")</script>
+      <script>alert("error!")</script>
       <?php
       exit();
     }

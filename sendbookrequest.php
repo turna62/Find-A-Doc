@@ -3,9 +3,9 @@
 
 <?php
 $host = "localhost";
-$dbUsername = "root";
+$dbUsername = "";
 $dbPassword = "";
-$dbname = "findadoc";
+$dbname = "";
 
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
@@ -82,7 +82,7 @@ if (mysqli_num_rows($checkResult) > 0) {
     <?php
     exit();
 } else {
-    // The appointment doesn't exist or is not accepted, proceed with sending the request
+    // The appointment doesn't exist or is not accepted
     if (!empty($tomail) && !empty($date) && !empty($time)) {
         $q = "SELECT * FROM requests WHERE frommail = '$frommail' AND tomail = '$tomail' and date ='$date' and time='$time'";
         $res = mysqli_query($conn, $q);

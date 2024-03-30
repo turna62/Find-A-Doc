@@ -1,9 +1,9 @@
 <?php
 
 $host = "localhost";
-$dbUsername = "root";
+$dbUsername = "";
 $dbPassword = "";
-$dbname = "findadoc";
+$dbname = "";
 
 $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 

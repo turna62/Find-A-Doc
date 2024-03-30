@@ -20,7 +20,7 @@ if (!empty($review)){
         $doctorData = mysqli_fetch_assoc($doctorResult);
 
         if ($doctorData) {
-            // User is reviewing themselves
+           
             echo '<script>alert("You cannot review yourself as a doctor!")</script>'; ///
         } else {
             // Check if the user has already reviewed this doctor
@@ -40,7 +40,7 @@ if (!empty($review)){
                 if (!$statusData) {
                     echo '<script>alert("You must have a completed appointment with the doctor before giving a review!")</script>'; ///
                 } else {
-                    // Insert the new review
+                    
                     $INSERT = "INSERT INTO `reviews` (`rpatientname`, `review`, `rdoctorid`) VALUES ('$rpatientname', '$review', '$sno')";
                 
                     if(mysqli_query($db, $INSERT))
